@@ -17,6 +17,7 @@
   "ports_description": {
     "5678/tcp": "n8n Web interface"
   },
+  "ingress": true,
   "options": {
     "auth": false,
     "auth_username": "",
