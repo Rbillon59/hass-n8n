@@ -13,6 +13,7 @@ mkdir -p "${N8N_PATH}/.n8n"
 # REQUIRED
     
 
+export N8N_LISTEN_ADDRESS="$(jq --raw-output '.ip // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_ACTIVE="$(jq --raw-output '.auth // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_USER="$(jq --raw-output '.auth_username // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_PASSWORD="$(jq --raw-output '.auth_password // empty' $CONFIG_PATH)"
