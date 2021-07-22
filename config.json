@@ -21,7 +21,6 @@
   "ingress_port": 5678,
   "panel_icon": "mdi:gate-xor",
   "options": {
-    "ip": "0.0.0.0",
     "auth": false,
     "auth_username": "",
     "auth_password": "",
@@ -31,7 +30,6 @@
     "keyfile": "privkey.pem"
   },
   "schema": {
-    "ip": "str",
     "auth": "bool",
     "auth_username": "str?",
     "auth_password": "str?",
