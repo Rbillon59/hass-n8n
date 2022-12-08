@@ -32,7 +32,7 @@ jobs:
         run: |
           actual_config=$(cat config.json | jq -r ".version" | awk -F"." '{print $3}')
           new_config=$((actual_config+1))
-          jq ".version = \"${new_config}\"" config.json > config.json.tmp && mv config.json.tmp config.json
+          jq ".version = \"0.0.${new_config}\"" config.json > config.json.tmp && mv config.json.tmp config.json
 
       - name: create pull request
         if: steps.check_update.outputs.update_needed == 'true'
