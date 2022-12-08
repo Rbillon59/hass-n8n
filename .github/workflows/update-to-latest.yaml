@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: '30 5 * * 1,2'
+    - cron: '30 5 * * 2'
   workflow_dispatch:
 
 jobs:
@@ -23,11 +23,8 @@ jobs:
         run: echo "Update not needed" && exit 0
 
       - name: update n8n version in Dockerfile
-        uses: peter-evans/sed@v1
-        with:
-          pattern: 'ARG N8N_VERSION=.*'
-          replacement: 'ARG N8N_VERSION=${{ steps.n8n_latest_version.outputs.latest_release }}'
-          file: Dockerfile
+        run: |
+          sed -i "s/N8N_VERSION=.*/N8N_VERSION=${{ steps.n8n_latest_version.outputs.latest_release }}/g" Dockerfile
 
       - name: create pull request
         uses: peter-evans/create-pull-request@v3
