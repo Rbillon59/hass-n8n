@@ -18,10 +18,6 @@ jobs:
         id: check_version
         run: echo "::set-output name=actual_version::$(grep -oP '(?<=ARG N8N_VERSION=)[0-9]\.[0-9][0-9][0-9]\.[0-9]' Dockerfile)"
 
-      - name: Check if update is needed
-        if: steps.check_version.outputs.actual_version == steps.n8n_latest_version.outputs.latest_release
-        run: echo "Update not needed" && exit 0
-
       - name: update n8n version in Dockerfile
         run: |
           sed -i "s/N8N_VERSION=.*/N8N_VERSION=${{ steps.n8n_latest_version.outputs.latest_release }}/g" Dockerfile
