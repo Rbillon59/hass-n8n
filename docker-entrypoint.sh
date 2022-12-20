@@ -3,8 +3,7 @@
 CONFIG_PATH="/data/options.json"
 N8N_PATH="/data/n8n"
 
-mkdir -p "${N8N_PATH}/.n8n"
-
+mkdir -p "${N8N_PATH}/.n8n/.cache"
 
 #####################
 ## USER PARAMETERS ##
@@ -36,11 +35,12 @@ fi
 
 if [ -d ${N8N_PATH} ] ; then
   chmod o+rx ${N8N_PATH}
-  chown -R node ${N8N_PATH}/.n8n
+  chown -R node:node ${N8N_PATH}
   ln -s ${N8N_PATH}/.n8n /home/node/
 fi
 
-chown -R node /home/node
+chown -R node:node /home/node
+ 
 
 if [ "$#" -gt 0 ]; then
   # Got started with arguments
