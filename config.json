@@ -1,6 +1,6 @@
 {
   "name": "Hass n8n",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "slug": "hass-n8n",
   "description": "Self host your n8n instance",
   "arch": [
@@ -14,7 +14,7 @@
   "boot": "auto",
   "icon": "ico.png",
   "logo": "ico.png",
-  "webui": "[PROTO:protocol]://[HOST]:[PORT:5678]/",
+  "webui": "http://[HOST]:[PORT:5678]/",
   "map": [
     "ssl"
   ],
@@ -32,7 +32,8 @@
     "timezone": "Europe/Berlin",
     "protocol": "http",
     "certfile": "fullchain.pem",
-    "keyfile": "privkey.pem"
+    "keyfile": "privkey.pem",
+    "webhook_tunnel_url": "http://localhost:5678"
   },
   "schema": {
     "auth": "bool",
@@ -41,6 +42,7 @@
     "timezone": "str",
     "protocol": "str",
     "certfile": "str",
-    "keyfile": "str"
+    "keyfile": "str",
+    "webhook_tunnel_url": "str"
   }
 }

@@ -24,6 +24,7 @@ Even if unused, let the default variables set.
 Add-on configuration:
 
 ```yaml
+webhook_tunnel_url: http://localhost:5678
 auth: false
 auth_username: auth_username
 auth_password: changeme
@@ -32,6 +33,10 @@ protocol: http
 certfile: fullchain.pem
 keyfile: privkey.pem
 ```
+
+### Option: `webhook_tunnel_url` (optionnal)
+
+Set the instance url for callback functions like sso
 
 ### Option: `auth` (required)
 
@@ -67,7 +72,6 @@ The private key of the SSL certificate if https enabled
 ## How to use it ?
 
 Just start the addon and head to the webui at http(s)://host:port (here 5678 by default)
-
 
 ## Useful ressources :
 

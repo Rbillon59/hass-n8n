@@ -11,7 +11,7 @@ mkdir -p "${N8N_PATH}/.n8n/.cache"
 
 # REQUIRED
     
-
+export WEBHOOK_TUNNEL_URL="$(jq --raw-output '.webhook_tunnel_url // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_ACTIVE="$(jq --raw-output '.auth // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_USER="$(jq --raw-output '.auth_username // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_PASSWORD="$(jq --raw-output '.auth_password // empty' $CONFIG_PATH)"
@@ -27,6 +27,9 @@ if [ -z "${N8N_BASIC_AUTH_USER}" ] || [ -z "${N8N_BASIC_AUTH_ACTIVE}" ]; then
     unset N8N_BASIC_AUTH_PASSWORD
 fi
 
+if [ -z "${WEBHOOK_TUNNEL_URL}" ]; then
+    export WEBHOOK_TUNNEL_URL=http://localhost:5678
+fi
 
 ###########
 ## MAIN  ##
