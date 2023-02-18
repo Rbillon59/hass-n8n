@@ -3,6 +3,7 @@
   "version": "0.0.16",
   "slug": "hass-n8n",
   "description": "Self host your n8n instance",
+  "url": "https://github.com/lublak/hass-n8n/tree/master/hass-n8n",
   "arch": [
     "armhf",
     "armv7",
