@@ -6,6 +6,9 @@ on:
 jobs:
   n8n_latest_release:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./hass-n8n
     steps:
       - name: Checkout
         uses: actions/checkout@v2
