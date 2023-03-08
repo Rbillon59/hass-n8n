@@ -1,4 +1,4 @@
-ARG N8N_VERSION=0.215.1
+ARG N8N_VERSION=0.218.0
 FROM n8nio/n8n:${N8N_VERSION}
 RUN apk add --no-cache --update jq
 USER root
