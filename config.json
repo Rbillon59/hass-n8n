@@ -16,7 +16,8 @@
   "logo": "ico.png",
   "webui": "http://[HOST]:[PORT:5678]/",
   "map": [
-    "ssl"
+    "ssl",
+    "backup"
   ],
   "apparmor": true,
   "ports": {
