@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 CONFIG_PATH="/data/options.json"
 N8N_PATH="/data/n8n"
@@ -10,8 +10,23 @@ mkdir -p "${N8N_PATH}/.n8n/.cache"
 #####################
 
 # REQUIRED
+
+# Extract the values from env_vars_list
+values=$(jq -r '.env_vars_list | .[]' "$CONFIG_PATH")
+
+# Convert the values to an array
+IFS=$'\n' read -r -d '' -a array <<< "$values"
+
+# Export keys and values
+for element in "${array[@]}"
+do
+    key="${element%%:*}"
+    value="${element#*:}"
+    value=$(echo "$value" | xargs) # Remove leading and trailing whitespace
+    export "$key"="$value"
+    echo "exported ${key}=${value}"
+done
     
-export WEBHOOK_TUNNEL_URL="$(jq --raw-output '.webhook_tunnel_url // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_ACTIVE="$(jq --raw-output '.auth // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_USER="$(jq --raw-output '.auth_username // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_PASSWORD="$(jq --raw-output '.auth_password // empty' $CONFIG_PATH)"
@@ -25,10 +40,6 @@ if [ -z "${N8N_BASIC_AUTH_USER}" ] || [ -z "${N8N_BASIC_AUTH_ACTIVE}" ]; then
     export N8N_BASIC_AUTH_ACTIVE=false
     unset N8N_BASIC_AUTH_USER
     unset N8N_BASIC_AUTH_PASSWORD
-fi
-
-if [ -z "${WEBHOOK_TUNNEL_URL}" ]; then
-    export WEBHOOK_TUNNEL_URL=http://localhost:5678
 fi
 
 ###########
