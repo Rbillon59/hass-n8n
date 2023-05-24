@@ -35,11 +35,13 @@ jobs:
           actual_version=$(cat config.json | jq -r ".version" | awk -F"." '{print $1"."$2}')
           new_version="${actual_version}.${new_config}"
           jq ".version = \"${new_version}\"" config.json > config.json.tmp && mv config.json.tmp config.json
+          sed -i "s/## \[Unreleased\]/## \[Unreleased\]\n\n## [ ${new_version} ] - $(date +%Y-%m-%d) \n\n Bump n8n to ${{ steps.n8n_latest_version.outputs.latest_release }}/g" CHANGELOG.md
+
 
       - name: update CHANGELOG.md
         if: steps.check_update.outputs.update_needed == 'true'
         run: |
-          sed -i "s/## \[Unreleased\]/## \[Unreleased\]\n\n## [${{ steps.n8n_latest_version.outputs.latest_release }}] - $(date +%Y-%m-%d)/g" CHANGELOG.md
+          
 
       - name: create pull request
         if: steps.check_update.outputs.update_needed == 'true'
