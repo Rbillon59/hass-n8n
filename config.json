@@ -1,8 +1,9 @@
 {
   "name": "Hass n8n",
-  "version": "0.0.26",
+  "version": "1.0.1",
   "slug": "hass-n8n",
   "description": "Self host your n8n instance",
+  "url": "https://github.com/Rbillon59/hass-n8n",
   "arch": [
     "armhf",
     "armv7",
@@ -34,7 +35,9 @@
     "protocol": "http",
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem",
-    "webhook_tunnel_url": "http://localhost:5678"
+    "env_vars_list": [
+      "WEBHOOK_URL: http://localhost:5678",
+    ]
   },
   "schema": {
     "auth": "bool",
@@ -44,6 +47,8 @@
     "protocol": "str",
     "certfile": "str",
     "keyfile": "str",
-    "webhook_tunnel_url": "str"
+    "env_vars_list": [
+      "match(^[A-Z_0-9]+: .*$)"
+    ]
   }
 }
