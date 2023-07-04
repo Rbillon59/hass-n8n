@@ -18,7 +18,8 @@
   "webui": "http://[HOST]:[PORT:5678]/",
   "map": [
     "ssl",
-    "backup"
+    "backup",
+    "share"
   ],
   "apparmor": true,
   "ports": {
