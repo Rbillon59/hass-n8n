@@ -19,7 +19,7 @@
   "map": [
     "ssl:ro",
     "backup:rw",
-    "share!:rw",
+    "share:rw",
     "media:rw",
     "config:ro"
   ],
