@@ -19,7 +19,8 @@
   "map": [
     "ssl",
     "backup",
-    "share"
+    "share",
+    "media"
   ],
   "apparmor": true,
   "ports": {
