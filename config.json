@@ -17,10 +17,11 @@
   "logo": "ico.png",
   "webui": "http://[HOST]:[PORT:5678]/",
   "map": [
-    "ssl",
-    "backup",
-    "share",
-    "media"
+    "ssl:ro",
+    "backup:rw",
+    "share:rw",
+    "media:rw",
+    "config:ro"
   ],
   "apparmor": true,
   "ports": {
