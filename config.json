@@ -40,7 +40,8 @@
     "keyfile": "privkey.pem",
     "env_vars_list": [
       "WEBHOOK_URL: http://localhost:5678"
-    ]
+    ],
+    "cmd_line_args": ""
   },
   "schema": {
     "auth": "bool",
@@ -52,6 +53,7 @@
     "keyfile": "str",
     "env_vars_list": [
       "match(^[A-Z_0-9]+: .*$)"
-    ]
+    ],
+    "cmd_line_args": "str?"
   }
 }

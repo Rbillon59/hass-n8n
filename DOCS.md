@@ -16,6 +16,7 @@ protocol: http
 certfile: fullchain.pem
 keyfile: privkey.pem
 env_vars_list: []
+cmd_line_args: ""
 ```
 
 ### Option: `env_vars_list` (required)
@@ -56,6 +57,10 @@ The cert of the SSL certificate if the https protocol is provided
 ### Option: `keyfile` (required)
 
 The private key of the SSL certificate if https enabled
+
+### Option: `cmd_line_args` (optional)
+
+The command line to start n8n. If you want to use a custom command line, you can use this variable.
 
 ## How to use it ?
 
