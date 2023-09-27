@@ -34,6 +34,7 @@ export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
 export N8N_PROTOCOL="$(jq --raw-output '.protocol // empty' $CONFIG_PATH)"
 export N8N_SSL_CERT="/ssl/$(jq --raw-output '.certfile // empty' $CONFIG_PATH)"
 export N8N_SSL_KEY="/ssl/$(jq --raw-output '.keyfile // empty' $CONFIG_PATH)"
+export N8N_CMD_LINE="$(jq --raw-output '.cmd_line_args // empty' $CONFIG_PATH)"
 export N8N_USER_FOLDER="${N8N_PATH}"
 
 if [ -z "${N8N_BASIC_AUTH_USER}" ] || [ -z "${N8N_BASIC_AUTH_ACTIVE}" ]; then
@@ -46,20 +47,10 @@ fi
 ## MAIN  ##
 ###########
 
-
-if [ -d ${N8N_PATH} ] ; then
-  chmod o+rx ${N8N_PATH}
-  chown -R node:node ${N8N_PATH}
-  ln -s ${N8N_PATH}/.n8n /home/node/
-fi
-
-chown -R node:node /home/node
- 
-
 if [ "$#" -gt 0 ]; then
   # Got started with arguments
-  exec su-exec node "$@"
+  exec n8n "${N8N_CMD_LINE}"
 else
   # Got started without arguments
-  exec su-exec node n8n
+  exec n8n start
 fi
