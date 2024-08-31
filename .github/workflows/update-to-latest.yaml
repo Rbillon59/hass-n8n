@@ -47,7 +47,7 @@ jobs:
 
       - name: create pull request
         if: steps.check_update.outputs.update_needed == 'true'
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.CR_PAT }}
           commit-message: Update n8n to ${{ steps.n8n_latest_version.outputs.latest_release }}
