@@ -22,7 +22,7 @@ jobs:
           new_version="${actual_version}.${new_config}"
           jq ".version = \"${new_version}\"" config.json > config.json.tmp && mv config.json.tmp config.json
           n8n_version=$(cat Dockerfile | grep "FROM" | awk -F":" '{print $2}')
-          echo "::set-output name=new_version::${new_version}"
+          echo "::set-output name=new_version::${n8n_version}"
           sed -i "s/## \[Unreleased\]/## \[Unreleased\]\n\n## [ ${new_version} ] - $(date +%Y-%m-%d) \n\n Bump n8n to ${n8n_version} /g" CHANGELOG.md        
 
       - name: create pull request
