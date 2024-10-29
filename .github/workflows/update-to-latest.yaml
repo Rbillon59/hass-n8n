@@ -30,7 +30,7 @@ jobs:
         with:
           token: ${{ secrets.CR_PAT }}
           commit-message: Update n8n to ${{ steps.n8n_latest_version.outputs.new_version }}
-          title: Update n8n to ${{ steps.n8n_latest_version.outputs.latest_release }}
+          title: Update n8n to ${{ steps.n8n_latest_version.outputs.new_version }}
           body: |
             Update n8n to ${{ steps.n8n_latest_version.outputs.new_version }}
           branch: update-n8n-${{ steps.n8n_latest_version.outputs.new_version }}
