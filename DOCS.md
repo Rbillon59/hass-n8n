@@ -27,6 +27,16 @@ List of the N8N environment variables. You can add as many environment variables
 
 All the available environment variables are available here : <https://docs.n8n.io/hosting/environment-variables/environment-variables/>
 
+#### Installing external packages
+
+In n8n you can add external node modules by setting the `NODE_FUNCTION_ALLOW_EXTERNAL` environment variable with the list of npm packages you need.
+
+For example, to install the `lodash` and the `moment` packages, in the UI, set the `env_vars_list` variable to:
+
+```txt
+NODE_FUNCTION_ALLOW_EXTERNAL: lodash,moment
+```
+
 ### Option: `auth` (required)
 
 Enable of disable the basic authentication in the web interface.
