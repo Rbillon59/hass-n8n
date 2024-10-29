@@ -26,6 +26,18 @@ do
     export "$key"="$value"
     echo "exported ${key}=${value}"
 done
+
+# IF NODE_FUNCTION_ALLOW_EXTERNAL is set, install the required packages
+
+if [ -n "${NODE_FUNCTION_ALLOW_EXTERNAL}" ]; then
+    echo "Installing external packages..."
+    IFS=',' read -r -a packages <<< "${NODE_FUNCTION_ALLOW_EXTERNAL}"
+    for package in "${packages[@]}"
+    do
+        echo "Installing ${package}..."
+        npm install -g "${package}"
+    done
+fi
     
 export N8N_BASIC_AUTH_ACTIVE="$(jq --raw-output '.auth // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_USER="$(jq --raw-output '.auth_username // empty' $CONFIG_PATH)"
