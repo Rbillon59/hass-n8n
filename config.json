@@ -23,13 +23,9 @@
     "media:rw",
     "config:ro"
   ],
+  "ingress": true,
+  "ingress_port": 5678,
   "apparmor": true,
-  "ports": {
-    "5678/tcp": 5678
-  },
-  "ports_description": {
-    "5678/tcp": "n8n Web interface"
-  },
   "options": {
     "auth": false,
     "auth_username": "",
