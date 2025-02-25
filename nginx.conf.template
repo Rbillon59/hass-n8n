@@ -14,7 +14,7 @@ http {
 
     server {
         listen 8080;
-        server_name localhost;
+        server_name 0.0.0.0;
         allow 172.30.32.2;
         deny all;
 
