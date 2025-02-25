@@ -21,7 +21,7 @@ cmd_line_args: ""
 
 ### Option: `env_vars_list` (required)
 
-List of the N8N environment variables. You can add as many environment variables as you want to the list through the UI. The format is the following :
+List of the n8n environment variables. You can add as many environment variables as you want to the list through the UI. The format is the following :
 
 `WEBHOOK_URL: https://mywebhookurl.com` (the regular expression is `^[A-Z_0-9]+: .*$` )
 
