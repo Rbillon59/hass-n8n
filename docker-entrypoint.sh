@@ -1,5 +1,4 @@
 #!/bin/bash
-
 CONFIG_PATH="/data/options.json"
 N8N_PATH="/data/n8n"
 
@@ -39,10 +38,24 @@ if [ -n "${NODE_FUNCTION_ALLOW_EXTERNAL}" ]; then
     done
 fi
 
+# If a fallback is provided, use it.
+if [ -n "$INGRESS_URL" ]; then
+  echo "Using fallback Ingress Path: ${INGRESS_URL}"
+else
+  # Query the Supervisor API for add-on info.
+  ADDON_INFO=$(curl -s -H "Authorization: Bearer ${HASSIO_TOKEN}" http://supervisor/addons/self/info)
+  INGRESS_URL=$(echo "$ADDON_INFO" | jq -r '.ingress_url')
+fi
+  
+# Extract just the path part, assuming a URL structure like https://host/ingress/abcdef...
+INGRESS_PATH=$(echo "$INGRESS_URL" | sed -e 's|^[^/]*//[^/]*||')
+echo "Fetched Ingress Path from Supervisor: ${INGRESS_PATH}"
+
 export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
 export N8N_CMD_LINE="$(jq --raw-output '.cmd_line_args // empty' $CONFIG_PATH)"
 export N8N_USER_FOLDER="${N8N_PATH}"
 export N8N_BASIC_AUTH_ACTIVE=false
+export N8N_PATH="${INGRESS_PATH}"
 
 ###########
 ## MAIN  ##
@@ -53,5 +66,5 @@ if [ "$#" -gt 0 ]; then
   exec n8n "${N8N_CMD_LINE}"
 else
   # Got started without arguments
-  n8n
+  exec n8n
 fi
