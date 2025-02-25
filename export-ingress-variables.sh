@@ -15,10 +15,10 @@ else
   ADDON_INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/addons/self/info)
   echo "Fetched Add-on Info from Supervisor: ${ADDON_INFO}"
 
-  export INGRESS_PATH=$(echo "$ADDON_INFO" | jq -r '.ingress_url')
+  export INGRESS_PATH=$(echo "$ADDON_INFO" | jq -r '.data.ingress_entry')
   echo "Extracted Ingress Path from Supervisor: ${INGRESS_PATH}"
 
-  export INGRESS_URL=$(echo "$INFO" | jq -r '.hostname')
+  export INGRESS_URL=$(echo "$INFO" | jq -r '.data.hostname')
   echo "Extracted Ingress URL from Supervisor: ${INGRESS_URL}"
 fi
 
