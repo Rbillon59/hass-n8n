@@ -43,8 +43,12 @@ fi
 export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
 export N8N_CMD_LINE="$(jq --raw-output '.cmd_line_args // empty' $CONFIG_PATH)"
 export N8N_USER_FOLDER="${N8N_PATH}"
-export N8N_BASIC_AUTH_ACTIVE=false
 export N8N_PATH="${INGRESS_PATH}"
+export N8N_EDITOR_BASE_URL="${INGRESS_URL}"
+
+export N8N_BASIC_AUTH_ACTIVE=false
+export N8N_HIRING_BANNER_ENABLED=false
+export N8N_PERSONALIZATION_ENABLED=false
 
 ###########
 ## MAIN  ##

@@ -15,8 +15,8 @@ http {
     server {
         listen 8080;
         server_name localhost;
-        # allow 172.30.32.2;
-        # deny all;
+        allow 172.30.32.2;
+        deny all;
 
         location ${INGRESS_PATH} {
             proxy_pass http://localhost:5678/;

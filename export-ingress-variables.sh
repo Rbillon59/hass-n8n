@@ -11,4 +11,5 @@ fi
 
 # Extract just the path part, assuming a URL structure like https://host/ingress/abcdef...
 export INGRESS_PATH=$(echo "$INGRESS_URL" | sed -e 's|^[^/]*//[^/]*||')
+export INGRESS_URL=$INGRESS_URL
 echo "Fetched Ingress Path from Supervisor: ${INGRESS_PATH}"
