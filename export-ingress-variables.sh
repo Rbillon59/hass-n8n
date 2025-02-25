@@ -3,15 +3,23 @@
 # If a fallback is provided, use it.
 if [ -n "$INGRESS_URL" ]; then
   echo "Using fallback Ingress Path: ${INGRESS_URL}"
+  export INGRESS_PATH=$(echo "$INGRESS_URL" | sed -e 's|^[^/]*//[^/]*||')
+  export INGRESS_URL=$INGRESS_URL
 else
+  # Query the Supervisor API for add-on info.
+  INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/info)
+  echo "Fetched Info from Supervisor: ${INFO}"
+
   # Query the Supervisor API for add-on info.
   ADDON_INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/addons/self/info)
   echo "Fetched Add-on Info from Supervisor: ${ADDON_INFO}"
-  
-  INGRESS_URL=$(echo "$ADDON_INFO" | jq -r '.ingress_url')
+
+  export INGRESS_PATH=$(echo "$ADDON_INFO" | jq -r '.ingress_url')
+  echo "Extracted Ingress Path from Supervisor: ${INGRESS_PATH}"
+
+  export INGRESS_URL=$(echo "$INFO" | jq -r '.hostname')
+  echo "Extracted Ingress URL from Supervisor: ${INGRESS_URL}"
 fi
 
-# Extract just the path part, assuming a URL structure like https://host/ingress/abcdef...
-export INGRESS_PATH=$(echo "$INGRESS_URL" | sed -e 's|^[^/]*//[^/]*||')
-export INGRESS_URL=$INGRESS_URL
-echo "Fetched Ingress Path from Supervisor: ${INGRESS_PATH}"
+echo "Final Ingress Path: ${INGRESS_PATH}"
+echo "Final Ingress URL: ${INGRESS_URL}"
