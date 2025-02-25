@@ -4,6 +4,7 @@ RUN apk add --no-cache --update \
     jq \
     bash \
     npm \
+    curl \
     nginx \
     supervisor \
     envsubst
