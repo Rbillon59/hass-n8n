@@ -19,7 +19,7 @@ else
   echo "Extracted Ingress Path from Supervisor: ${INGRESS_PATH}"
 
   # export INGRESS_URL="http://$(echo "$INFO" | jq -r '.data.hostname')"
-  export INGRESS_URL="http://localhost$INGRESS_PATH"
+  export INGRESS_URL="http://localhost:5678$INGRESS_PATH"
   echo "Extracted Ingress URL from Supervisor: ${INGRESS_URL}"
 fi
 
