@@ -5,7 +5,7 @@ if [ -n "$INGRESS_URL" ]; then
   echo "Using fallback Ingress Path: ${INGRESS_URL}"
 else
   # Query the Supervisor API for add-on info.
-  ADDON_INFO=$(curl -s -H "Authorization: Bearer ${HASSIO_TOKEN}" http://supervisor/addons/self/info)
+  ADDON_INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/addons/self/info)
   INGRESS_URL=$(echo "$ADDON_INFO" | jq -r '.ingress_url')
 fi
 
