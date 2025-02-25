@@ -1,4 +1,4 @@
-FROM docker.n8n.io/n8nio/n8n:1.80.3
+FROM docker.n8n.io/n8nio/n8n:1.81.0
 USER root
 RUN apk add --no-cache --update jq bash npm
 WORKDIR /data
