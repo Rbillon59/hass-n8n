@@ -50,6 +50,7 @@ export N8N_RUNNERS_ENABLED=true
 export N8N_BASIC_AUTH_ACTIVE=false
 export N8N_HIRING_BANNER_ENABLED=false
 export N8N_PERSONALIZATION_ENABLED=false
+export N8N_SECURE_COOKIE=false
 
 ###########
 ## MAIN  ##
