@@ -1,4 +1,4 @@
-# Home Assistant Add-on: Hass-n8n
+# Home Assistant Add-on: n8n
 
 ## What is n8n?
 
