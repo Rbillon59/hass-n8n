@@ -16,8 +16,8 @@
   ],
   "startup": "application",
   "boot": "auto",
-  "icon": "ico.png",
-  "logo": "ico.png",
+  "icon": "icon.png",
+  "logo": "icon.png",
   "webui": "http://[HOST]:[PORT:8080]/",
   "map": [
     "ssl:ro",
