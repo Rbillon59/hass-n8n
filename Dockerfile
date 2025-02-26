@@ -9,14 +9,14 @@ RUN apk add --no-cache --update \
     supervisor \
     envsubst
 WORKDIR /data
-COPY docker-entrypoint.sh /app/docker-entrypoint.sh
+COPY n8n-entrypoint.sh /app/n8n-entrypoint.sh
 
 # Create directory for nginx runtime files
 RUN mkdir -p /run/nginx
 
 COPY export-ingress-variables.sh /app/export-ingress-variables.sh
 
-COPY docker-entrypoint.sh /app/docker-entrypoint.sh
+COPY n8n-entrypoint.sh /app/n8n-entrypoint.sh
 COPY nginx-entrypoint.sh /app/nginx-entrypoint.sh
 
 COPY nginx.conf.template /etc/nginx/nginx.conf.template
