@@ -4,6 +4,20 @@ N8N_PATH="/data/n8n"
 
 mkdir -p "${N8N_PATH}/.n8n/.cache"
 
+. /app/export-ingress-variables.sh
+
+export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
+export N8N_CMD_LINE="$(jq --raw-output '.cmd_line_args // empty' $CONFIG_PATH)"
+export N8N_USER_FOLDER="${N8N_PATH}"
+export N8N_PATH="${INGRESS_PATH}"
+export N8N_EDITOR_BASE_URL="${INGRESS_URL}"
+
+export N8N_RUNNERS_ENABLED=true
+export N8N_BASIC_AUTH_ACTIVE=false
+export N8N_HIRING_BANNER_ENABLED=false
+export N8N_PERSONALIZATION_ENABLED=false
+export N8N_SECURE_COOKIE=false
+
 #####################
 ## USER PARAMETERS ##
 #####################
@@ -37,20 +51,6 @@ if [ -n "${NODE_FUNCTION_ALLOW_EXTERNAL}" ]; then
         npm install -g "${package}"
     done
 fi
-
-. /app/export-ingress-variables.sh
-
-export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
-export N8N_CMD_LINE="$(jq --raw-output '.cmd_line_args // empty' $CONFIG_PATH)"
-export N8N_USER_FOLDER="${N8N_PATH}"
-export N8N_PATH="${INGRESS_PATH}"
-export N8N_EDITOR_BASE_URL="${INGRESS_URL}"
-
-export N8N_RUNNERS_ENABLED=true
-export N8N_BASIC_AUTH_ACTIVE=false
-export N8N_HIRING_BANNER_ENABLED=false
-export N8N_PERSONALIZATION_ENABLED=false
-export N8N_SECURE_COOKIE=false
 
 ###########
 ## MAIN  ##
