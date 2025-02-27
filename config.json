@@ -30,8 +30,8 @@
   "ingress_port": 8080,
   "apparmor": true,
   "options": {
-    "timezone": "Europe/Berlin",
-    "env_vars_list": [],
+    "timezone": "America/New York",
+    "env_vars_list": ["WEBHOOK_URL=https://hass.pacollier.com/api/hassio_ingress/UiIiYpZUxyGaNniXlZEaU6vXPMPFnmEBKzyePVUIBII"],
     "cmd_line_args": ""
   },
   "schema": {
