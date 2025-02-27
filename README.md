@@ -1,4 +1,4 @@
-# Home Assistant Add-on: Hass-n8n
+# Home Assistant Add-on: n8n
 
 ## What is n8n?
 
@@ -9,7 +9,7 @@ n8n (pronounced n-eight-n) helps you to interconnect every app with an API in th
 
 Follow these steps to get the add-on installed on your system:
 
-:warning: Important : Make sure you've added my addon repository to your home-assistant addon library : https://github.com/Rbillon59/home-assistant-addons
+**Important:** Make sure you've added this addon repository to your Home Assistant addon library: https://github.com/Rbillon59/hass-n8n
 
 1. Navigate in your Home Assistant frontend to **Supervisor** -> **Add-on Store**.
 2. Find the "hass-n8n" add-on and click it.
