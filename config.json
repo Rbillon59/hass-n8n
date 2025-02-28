@@ -1,6 +1,6 @@
 {
   "name": "n8n",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "slug": "hass-n8n",
   "description": "Self host your n8n instance",
   "url": "https://github.com/Rbillon59/hass-n8n",
@@ -28,6 +28,9 @@
   ],
   "ingress": true,
   "ingress_port": 8080,
+  "ports": {
+    "8080/tcp": 5678
+  },
   "apparmor": true,
   "options": {
     "timezone": "Europe/Berlin",
