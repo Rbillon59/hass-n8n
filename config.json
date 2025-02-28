@@ -1,12 +1,9 @@
 {
   "name": "n8n",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "slug": "hass-n8n",
   "description": "Self host your n8n instance",
   "url": "https://github.com/Rbillon59/hass-n8n",
-  "hassio_api": true,
-  "hassio_role": "default",
-  "homeassistant_api": true,
   "arch": [
     "armhf",
     "armv7",
@@ -16,9 +13,9 @@
   ],
   "startup": "application",
   "boot": "auto",
-  "icon": "icon.png",
-  "logo": "icon.png",
-  "webui": "http://[HOST]:[PORT:8080]/",
+  "icon": "ico.png",
+  "logo": "ico.png",
+  "webui": "http://[HOST]:[PORT:5678]/",
   "map": [
     "ssl:ro",
     "backup:rw",
@@ -26,16 +23,34 @@
     "media:rw",
     "config:ro"
   ],
-  "ingress": true,
-  "ingress_port": 8080,
   "apparmor": true,
+  "ports": {
+    "5678/tcp": 5678
+  },
+  "ports_description": {
+    "5678/tcp": "n8n Web interface"
+  },
   "options": {
+    "auth": false,
+    "auth_username": "",
+    "auth_password": "",
     "timezone": "Europe/Berlin",
-    "env_vars_list": [],
+    "protocol": "http",
+    "certfile": "fullchain.pem",
+    "keyfile": "privkey.pem",
+    "env_vars_list": [
+      "WEBHOOK_URL: http://localhost:5678"
+    ],
     "cmd_line_args": ""
   },
   "schema": {
+    "auth": "bool",
+    "auth_username": "str?",
+    "auth_password": "str?",
     "timezone": "str",
+    "protocol": "str",
+    "certfile": "str",
+    "keyfile": "str",
     "env_vars_list": [
       "match(^[A-Z_0-9]+: .*$)"
     ],
