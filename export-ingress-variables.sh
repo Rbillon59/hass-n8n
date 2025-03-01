@@ -18,8 +18,21 @@ else
   export INGRESS_PATH=$(echo "$ADDON_INFO" | jq -r '.data.ingress_url')
   echo "Extracted Ingress Path from Supervisor: ${INGRESS_PATH}"
 
-  # export INGRESS_URL="http://$(echo "$INFO" | jq -r '.data.hostname')"
-  export INGRESS_URL="http://localhost:5678$INGRESS_PATH"
+  # Get the Home Assistant hostname from the supervisor info
+  HA_HOSTNAME=$(echo "$INFO" | jq -r '.data.hostname')
+  
+  # Get the port from the configuration
+  HA_PORT=$(echo "$CONFIG" | jq -r '.port // "8123"')
+  echo "Home Assistant Port: ${HA_PORT}"
+  
+  # Get the external URL if configured, otherwise use the hostname and port
+  EXTERNAL_URL=$(echo "$CONFIG" | jq -r '.external_url // empty')
+  
+  if [ -n "$EXTERNAL_URL" ]; then
+    export INGRESS_URL="${EXTERNAL_URL}${INGRESS_PATH}"
+  else
+    export INGRESS_URL="http://${HA_HOSTNAME}:${HA_PORT}${INGRESS_PATH}"
+  fi
   echo "Extracted Ingress URL from Supervisor: ${INGRESS_URL}"
 fi
 

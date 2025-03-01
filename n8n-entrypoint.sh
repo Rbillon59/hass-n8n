@@ -30,6 +30,9 @@ values=$(jq -r '.env_vars_list | .[]' "$CONFIG_PATH")
 # Convert the values to an array
 IFS=$'\n' read -r -d '' -a array <<< "$values"
 
+# Flag to track if WEBHOOK_URL is set by the user
+webhook_url_set=false
+
 # Export keys and values
 for element in "${array[@]}"
 do
@@ -38,7 +41,18 @@ do
     value=$(echo "$value" | xargs) # Remove leading and trailing whitespace
     export "$key"="$value"
     echo "exported ${key}=${value}"
+    
+    # Check if WEBHOOK_URL is set by the user
+    if [ "$key" = "WEBHOOK_URL" ]; then
+        webhook_url_set=true
+    fi
 done
+
+# If WEBHOOK_URL is not set by the user, set it to the ingress URL
+if [ "$webhook_url_set" = false ]; then
+    export WEBHOOK_URL="${INGRESS_URL}"
+    echo "exported WEBHOOK_URL=${INGRESS_URL} (auto-configured from ingress)"
+fi
 
 # IF NODE_FUNCTION_ALLOW_EXTERNAL is set, install the required packages
 

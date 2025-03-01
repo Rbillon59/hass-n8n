@@ -31,7 +31,7 @@
   "apparmor": true,
   "options": {
     "timezone": "America/New York",
-    "env_vars_list": ["WEBHOOK_URL=https://hass.pacollier.com/api/hassio_ingress/UiIiYpZUxyGaNniXlZEaU6vXPMPFnmEBKzyePVUIBII"],
+    "env_vars_list": [],
     "cmd_line_args": ""
   },
   "schema": {
