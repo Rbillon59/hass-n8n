@@ -4,41 +4,37 @@ N8N_PATH="/data/n8n"
 
 mkdir -p "${N8N_PATH}/.n8n/.cache"
 
-# If a fallback is provided, use it.
-if [ -n "$INGRESS_URL" ]; then
-  echo "Using fallback Ingress Path: ${INGRESS_URL}"
-  export INGRESS_PATH=$(echo "$INGRESS_URL" | sed -e 's|^[^/]*//[^/]*||')
-  export INGRESS_URL=$INGRESS_URL
-else
-  INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/info)
-  echo "Fetched Info from Supervisor: ${INFO}"
-  
-  CONFIG=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/core/api/config)
-  echo "Fetched Config from Supervisor: ${CONFIG}"
+INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/info)
+INFO=${INFO:-'{}'}
+echo "Fetched Info from Supervisor: ${INFO}"
 
-  ADDON_INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/addons/self/info)
-  echo "Fetched Add-on Info from Supervisor: ${ADDON_INFO}"
+CONFIG=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/core/api/config)
+CONFIG=${CONFIG:-'{}'}
+echo "Fetched Config from Supervisor: ${CONFIG}"
 
-  export INGRESS_PATH=$(echo "$ADDON_INFO" | jq -r '.data.ingress_url')
-  echo "Extracted Ingress Path from Supervisor: ${INGRESS_PATH}"
+ADDON_INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/addons/self/info)
+ADDON_INFO=${ADDON_INFO:-'{}'}
+echo "Fetched Add-on Info from Supervisor: ${ADDON_INFO}"
 
-  # Get the Home Assistant hostname from the supervisor info
-  HA_HOSTNAME=$(echo "$INFO" | jq -r '.data.hostname')
+INGRESS_PATH=$(echo "$ADDON_INFO" | jq -r '.data.ingress_url // "/"')
+echo "Extracted Ingress Path from Supervisor: ${INGRESS_PATH}"
 
-  # Get the port from the configuration
-  HA_PORT=$(echo "$CONFIG" | jq -r '.port // "8123"')
-  echo "Home Assistant Port: ${HA_PORT}"
+# Get the Home Assistant hostname from the supervisor info
+HA_HOSTNAME=$(echo "$INFO" | jq -r '.data.hostname // "localhost"')
 
-  # Get the external URL if configured, otherwise use the hostname and port
-  EXTERNAL_URL=$(echo "$CONFIG" | jq -r '.external_url // empty')
+# Get the port from the configuration
+HA_PORT=$(echo "$CONFIG" | jq -r '.port // "8123"')
+echo "Home Assistant Port: ${HA_PORT}"
 
-  if [ -n "$EXTERNAL_URL" ]; then
-    export INGRESS_URL="${EXTERNAL_URL}${INGRESS_PATH}"
-  else
-    export INGRESS_URL="http://${HA_HOSTNAME}:${HA_PORT}${INGRESS_PATH}"
-  fi
-  echo "Extracted Ingress URL from Supervisor: ${INGRESS_URL}"
-fi
+# Get the external URL if configured, otherwise use the hostname and port
+HA_URL=$(echo "$CONFIG" | jq -r ".external_url // "http://$HA_HOSTNAME:$HA_PORT"")
+
+# Get hostname from HA_URL
+HA_HOSTNAME=$(echo "$HA_URL" | sed -e "s/https\?:\/\///" | cut -d':' -f1)
+
+INGRESS_URL="http://${HA_HOSTNAME}:8080${INGRESS_PATH}"
+WEBHOOK_URL="http://${HA_HOSTNAME}:8081"
+echo "Extracted Ingress URL from Supervisor: ${INGRESS_URL}"
 
 echo "Final Ingress Path: ${INGRESS_PATH}"
 echo "Final Ingress URL: ${INGRESS_URL}"
@@ -48,7 +44,7 @@ export N8N_CMD_LINE="$(jq --raw-output '.cmd_line_args // empty' $CONFIG_PATH)"
 export N8N_USER_FOLDER="${N8N_PATH}"
 export N8N_PATH="${INGRESS_PATH}"
 export N8N_EDITOR_BASE_URL="${INGRESS_URL}"
-export WEBHOOK_URL="${INGRESS_URL}"
+export WEBHOOK_URL="${WEBHOOK_URL}"
 
 export N8N_RUNNERS_ENABLED=true
 export N8N_BASIC_AUTH_ACTIVE=false
