@@ -29,7 +29,7 @@
   "ingress": true,
   "ingress_port": 8080,
   "ports": {
-    "8081/tcp": 5678
+    "8081/tcp": 8081
   },
   "ports_description": {
     "8081/tcp": "The exposed port for N8N webhook-related traffic."

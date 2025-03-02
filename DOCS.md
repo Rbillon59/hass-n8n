@@ -25,9 +25,9 @@ cmd_line_args: ""
 
 ### Option: `env_vars_list` (required)
 
-List of the n8n environment variables. You can add as many environment variables as you want to the list through the UI. The format is the following :
+List of the n8n environment variables. You can add as many environment variables as you want to the list through the UI. The format is the following:
 
-`WEBHOOK_URL: https://mywebhookurl.com` (the regular expression is `^[A-Z_0-9]+: .*$` )
+`SOME_ENVIRONMENT_VARIABLE: some-value` (the regular expression is `^[A-Z_0-9]+: .*$` )
 
 All the available environment variables are available here : <https://docs.n8n.io/hosting/environment-variables/environment-variables/>
 
@@ -67,10 +67,10 @@ Just start the addon and head to the addon's web UI.
 
 Got questions?
 
-You can open an issue on Github and i'll try to answer it
+You can open an issue on GitHub.
 
-repository: <https://github.com/Rbillon59/hass-n8n>
+Repository: <https://github.com/Rbillon59/hass-n8n>
 
 ## License
 
-This addon is published under the apache 2 license. Original author of the addon's bundled software is n8n
+This addon is published under the Apache 2 license. Original author of the addon's bundled software is n8n.
