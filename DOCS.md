@@ -1,3 +1,13 @@
+# Installation
+
+Follow these steps to get the add-on installed on your system:
+
+**Important:** Make sure you've added this addon repository to your Home Assistant addon library: https://github.com/Rbillon59/hass-n8n
+
+1. Navigate in your Home Assistant frontend to **Supervisor** -> **Add-on Store**.
+2. Find the "hass-n8n" add-on and click it.
+3. Click on the "INSTALL" button.
+
 # Configuration
 
 In the configuration section, set the port if the default one is not good for you. Enable auth if you want and SSL to.
