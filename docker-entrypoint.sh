@@ -4,18 +4,22 @@ CONFIG_PATH="/data/options.json"
 N8N_PATH="/data/n8n"
 
 mkdir -p "${N8N_PATH}/.n8n/.cache"
-
+    
+export N8N_BASIC_AUTH_ACTIVE="$(jq --raw-output '.auth // empty' $CONFIG_PATH)"
+export N8N_BASIC_AUTH_USER="$(jq --raw-output '.auth_username // empty' $CONFIG_PATH)"
+export N8N_BASIC_AUTH_PASSWORD="$(jq --raw-output '.auth_password // empty' $CONFIG_PATH)"
 export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
+export N8N_PROTOCOL="$(jq --raw-output '.protocol // empty' $CONFIG_PATH)"
+export N8N_SSL_CERT="/ssl/$(jq --raw-output '.certfile // empty' $CONFIG_PATH)"
+export N8N_SSL_KEY="/ssl/$(jq --raw-output '.keyfile // empty' $CONFIG_PATH)"
 export N8N_CMD_LINE="$(jq --raw-output '.cmd_line_args // empty' $CONFIG_PATH)"
 export N8N_USER_FOLDER="${N8N_PATH}"
-export N8N_PATH="${INGRESS_PATH}"
-export N8N_EDITOR_BASE_URL="${INGRESS_URL}"
 
-export N8N_RUNNERS_ENABLED=true
-export N8N_BASIC_AUTH_ACTIVE=false
-export N8N_HIRING_BANNER_ENABLED=false
-export N8N_PERSONALIZATION_ENABLED=false
-export N8N_SECURE_COOKIE=false
+if [ -z "${N8N_BASIC_AUTH_USER}" ] || [ -z "${N8N_BASIC_AUTH_ACTIVE}" ]; then
+    export N8N_BASIC_AUTH_ACTIVE=false
+    unset N8N_BASIC_AUTH_USER
+    unset N8N_BASIC_AUTH_PASSWORD
+fi
 
 #####################
 ## USER PARAMETERS ##
@@ -49,22 +53,6 @@ if [ -n "${NODE_FUNCTION_ALLOW_EXTERNAL}" ]; then
         echo "Installing ${package}..."
         npm install -g "${package}"
     done
-fi
-    
-export N8N_BASIC_AUTH_ACTIVE="$(jq --raw-output '.auth // empty' $CONFIG_PATH)"
-export N8N_BASIC_AUTH_USER="$(jq --raw-output '.auth_username // empty' $CONFIG_PATH)"
-export N8N_BASIC_AUTH_PASSWORD="$(jq --raw-output '.auth_password // empty' $CONFIG_PATH)"
-export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
-export N8N_PROTOCOL="$(jq --raw-output '.protocol // empty' $CONFIG_PATH)"
-export N8N_SSL_CERT="/ssl/$(jq --raw-output '.certfile // empty' $CONFIG_PATH)"
-export N8N_SSL_KEY="/ssl/$(jq --raw-output '.keyfile // empty' $CONFIG_PATH)"
-export N8N_CMD_LINE="$(jq --raw-output '.cmd_line_args // empty' $CONFIG_PATH)"
-export N8N_USER_FOLDER="${N8N_PATH}"
-
-if [ -z "${N8N_BASIC_AUTH_USER}" ] || [ -z "${N8N_BASIC_AUTH_ACTIVE}" ]; then
-    export N8N_BASIC_AUTH_ACTIVE=false
-    unset N8N_BASIC_AUTH_USER
-    unset N8N_BASIC_AUTH_PASSWORD
 fi
 
 ###########
