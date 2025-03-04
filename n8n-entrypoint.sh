@@ -51,6 +51,7 @@ DATA_DIRECTORY_PATH="/data/n8n"
 mkdir -p "${DATA_DIRECTORY_PATH}/.n8n/.cache"
 
 export N8N_USER_FOLDER="${DATA_DIRECTORY_PATH}"
+echo "N8N_USER_FOLDER: ${N8N_USER_FOLDER}"
 
 INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/info)
 INFO=${INFO:-'{}'}
