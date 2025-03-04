@@ -28,6 +28,8 @@ jobs:
           skip-commit: true
 
       - name: Create and merge changelog PR
+        env:
+          GH_TOKEN: ${{ secrets.CR_PAT }}
         run: |
           # create new GIT branch
           git checkout -b automated/update-changelog
