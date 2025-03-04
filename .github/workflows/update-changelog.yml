@@ -24,3 +24,19 @@ jobs:
           github-token: ${{ secrets.CR_PAT }}
           version-file: ./config.json
           release-count: 10
+          git-push: false
+          skip-commit: true
+
+      - name: Create and merge changelog PR
+        run: |
+          # create new GIT branch
+          git checkout -b automated/update-changelog
+          git commit -m "Update CHANGELOG"
+          
+          # create PR
+          gh pr create \
+            --title "Update CHANGELOG" \
+            --body "This PR updates the CHANGELOG"
+
+          # merge PR
+          gh pr merge automated/update-changelog
