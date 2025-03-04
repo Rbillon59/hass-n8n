@@ -40,7 +40,8 @@ jobs:
           # commit changelog
           git add CHANGELOG.md
           git commit -m "Update CHANGELOG"
-          git push --set-upstream origin automated/update-changelog-${{ github.run_id }} --all
+          git push --set-upstream origin automated/update-changelog-${{ github.run_id }}
+          git push --all
           
           # create PR
           gh pr create \
