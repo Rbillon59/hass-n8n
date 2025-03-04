@@ -34,4 +34,4 @@ jobs:
             --base master \
             --head automated/update-changelog
           
-          gh pr merge automated/update-changelog --delete-branch
+          gh pr merge automated/update-changelog
