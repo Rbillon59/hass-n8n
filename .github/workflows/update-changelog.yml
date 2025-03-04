@@ -14,14 +14,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Generate changelog from pull requests
         id: changelog
         uses: TriPSs/conventional-changelog-action@latest
         with:
-          git-branch: refs/heads/automated/update-changelog
+          git-branch: automated/update-changelog
           github-token: ${{ secrets.CR_PAT }}
           version-file: ./config.json
           release-count: 10
