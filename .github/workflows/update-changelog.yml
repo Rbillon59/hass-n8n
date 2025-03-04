@@ -37,7 +37,7 @@ jobs:
           # commit changelog
           git add CHANGELOG.md
           git commit -m "Update CHANGELOG"
-          git push
+          git push --set-upstream origin automated/update-changelog
           
           # create PR
           gh pr create \
