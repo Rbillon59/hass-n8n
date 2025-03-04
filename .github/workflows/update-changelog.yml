@@ -22,10 +22,13 @@ jobs:
         uses: TriPSs/conventional-changelog-action@latest
         with:
           github-token: ${{ secrets.CR_PAT }}
+          output-file: CHANGELOG.md
           version-file: ./config.json
+          version-path: version
           release-count: 10
           git-push: false
           skip-commit: true
+          fallback-version: 3.0.0
 
       - name: Create and merge changelog PR
         env:
