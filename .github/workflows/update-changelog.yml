@@ -19,7 +19,7 @@ jobs:
         id: changelog
         uses: TriPSs/conventional-changelog-action@latest
         with:
-          git-branch: refs/heads/automated/update-changelog
+          git-branch: automated/update-changelog
           github-token: ${{ secrets.CR_PAT }}
           version-file: ./config.json
           release-count: 10
