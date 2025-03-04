@@ -27,7 +27,7 @@ HA_PORT=$(echo "$CONFIG" | jq -r '.port // "8123"')
 echo "Home Assistant Port: ${HA_PORT}"
 
 # Get the external URL if configured, otherwise use the hostname and port
-HA_URL=$(echo "$CONFIG" | jq -r ".external_url // "http://$HA_HOSTNAME:$HA_PORT"")
+HA_URL=$(echo "$CONFIG" | jq -r ".external_url // ""http://$HA_HOSTNAME:$HA_PORT""")
 echo "Home Assistant URL: ${HA_URL}"
 
 # Get hostname from HA_URL
