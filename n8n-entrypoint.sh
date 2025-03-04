@@ -28,6 +28,7 @@ echo "Home Assistant Port: ${HA_PORT}"
 
 # Get the external URL if configured, otherwise use the hostname and port
 HA_URL=$(echo "$CONFIG" | jq -r ".external_url // "http://$HA_HOSTNAME:$HA_PORT"")
+echo "Home Assistant URL: ${HA_URL}"
 
 # Get hostname from HA_URL
 HA_HOSTNAME=$(echo "$HA_URL" | sed -e "s/https\?:\/\///" | cut -d':' -f1)
@@ -38,6 +39,7 @@ echo "Extracted Ingress URL from Supervisor: ${INGRESS_URL}"
 
 echo "Final Ingress Path: ${INGRESS_PATH}"
 echo "Final Ingress URL: ${INGRESS_URL}"
+echo "Final Webhook URL: ${WEBHOOK_URL}"
 
 export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
 export N8N_PROTOCOL="$(jq --raw-output '.protocol // empty' $CONFIG_PATH)"
