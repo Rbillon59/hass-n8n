@@ -31,6 +31,9 @@ jobs:
         run: |
           # create new GIT branch
           git checkout -b automated/update-changelog
+
+          # commit changelog
+          git add CHANGELOG.md
           git commit -m "Update CHANGELOG"
           
           # create PR
