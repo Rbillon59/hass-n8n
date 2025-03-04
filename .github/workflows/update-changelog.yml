@@ -37,6 +37,7 @@ jobs:
           # commit changelog
           git add CHANGELOG.md
           git commit -m "Update CHANGELOG"
+          git push
           
           # create PR
           gh pr create \
