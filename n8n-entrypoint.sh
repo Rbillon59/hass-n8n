@@ -1,57 +1,15 @@
 #!/bin/bash
-CONFIG_PATH="/data/options.json"
-N8N_PATH="/data/n8n"
 
-mkdir -p "${N8N_PATH}/.n8n/.cache"
-
-INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/info)
-INFO=${INFO:-'{}'}
-echo "Fetched Info from Supervisor: ${INFO}"
-
-CONFIG=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/core/api/config)
-CONFIG=${CONFIG:-'{}'}
-echo "Fetched Config from Supervisor: ${CONFIG}"
-
-ADDON_INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/addons/self/info)
-ADDON_INFO=${ADDON_INFO:-'{}'}
-echo "Fetched Add-on Info from Supervisor: ${ADDON_INFO}"
-
-INGRESS_PATH=$(echo "$ADDON_INFO" | jq -r '.data.ingress_url // "/"')
-echo "Extracted Ingress Path from Supervisor: ${INGRESS_PATH}"
-
-# Get the port from the configuration
-LOCAL_HA_PORT=$(echo "$CONFIG" | jq -r '.port // "8123"')
-
-# Get the Home Assistant hostname from the supervisor info
-LOCAL_HA_HOSTNAME=$(echo "$INFO" | jq -r '.data.hostname // "localhost"')
-LOCAL_N8N_URL="http://$LOCAL_HA_HOSTNAME:8080"
-echo "Local Home Assistant n8n URL: ${LOCAL_N8N_URL}"
-
-# Get the external URL if configured, otherwise use the hostname and port
-EXTERNAL_N8N_URL=${EXTERNAL_URL:-$(echo "$CONFIG" | jq -r ".external_url // \"$LOCAL_N8N_URL\"")}
-echo "External Home Assistant n8n URL: ${EXTERNAL_N8N_URL}"
-
-INGRESS_URL="${EXTERNAL_N8N_URL}${INGRESS_PATH}"
-WEBHOOK_URL="http://${LOCAL_HA_HOSTNAME}:8081"
-
-echo "Final Ingress Path: ${INGRESS_PATH}"
-echo "Final Ingress URL: ${INGRESS_URL}"
-echo "Final Webhook URL: ${WEBHOOK_URL}"
+export N8N_SECURE_COOKIE=false
+export N8N_HIRING_BANNER_ENABLED=false
+export N8N_PERSONALIZATION_ENABLED=false
+export N8N_VERSION_NOTIFICATIONS_ENABLED=false
 
 export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
 export N8N_PROTOCOL="$(jq --raw-output '.protocol // empty' $CONFIG_PATH)"
 export N8N_SSL_CERT="/ssl/$(jq --raw-output '.certfile // empty' $CONFIG_PATH)"
 export N8N_SSL_KEY="/ssl/$(jq --raw-output '.keyfile // empty' $CONFIG_PATH)"
 export N8N_CMD_LINE="$(jq --raw-output '.cmd_line_args // empty' $CONFIG_PATH)"
-export N8N_USER_FOLDER="${N8N_PATH}"
-export N8N_PATH="${INGRESS_PATH}"
-export N8N_EDITOR_BASE_URL="${INGRESS_URL}"
-export WEBHOOK_URL="${WEBHOOK_URL}"
-
-export N8N_SECURE_COOKIE=false
-export N8N_HIRING_BANNER_ENABLED=false
-export N8N_PERSONALIZATION_ENABLED=false
-export N8N_VERSION_NOTIFICATIONS_ENABLED=false
 
 #####################
 ## USER PARAMETERS ##
@@ -86,6 +44,52 @@ if [ -n "${NODE_FUNCTION_ALLOW_EXTERNAL}" ]; then
         npm install -g "${package}"
     done
 fi
+
+CONFIG_PATH="/data/options.json"
+DATA_DIRECTORY_PATH="/data/n8n"
+
+mkdir -p "${DATA_DIRECTORY_PATH}/.n8n/.cache"
+
+export N8N_USER_FOLDER="${DATA_DIRECTORY_PATH}"
+
+INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/info)
+INFO=${INFO:-'{}'}
+echo "Fetched Info from Supervisor: ${INFO}"
+
+CONFIG=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/core/api/config)
+CONFIG=${CONFIG:-'{}'}
+echo "Fetched Config from Supervisor: ${CONFIG}"
+
+ADDON_INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/addons/self/info)
+ADDON_INFO=${ADDON_INFO:-'{}'}
+echo "Fetched Add-on Info from Supervisor: ${ADDON_INFO}"
+
+INGRESS_PATH=$(echo "$ADDON_INFO" | jq -r '.data.ingress_url // "/"')
+echo "Extracted Ingress Path from Supervisor: ${INGRESS_PATH}"
+
+# Get the port from the configuration
+LOCAL_HA_PORT=$(echo "$CONFIG" | jq -r '.port // "8123"')
+
+# Get the Home Assistant hostname from the supervisor info
+LOCAL_HA_HOSTNAME=$(echo "$INFO" | jq -r '.data.hostname // "localhost"')
+LOCAL_N8N_URL="http://$LOCAL_HA_HOSTNAME:8080"
+echo "Local Home Assistant n8n URL: ${LOCAL_N8N_URL}"
+
+# Get the external URL if configured, otherwise use the hostname and port
+EXTERNAL_N8N_URL=${EXTERNAL_URL:-$(echo "$CONFIG" | jq -r ".external_url // \"$LOCAL_N8N_URL\"")}
+EXTERNAL_HA_HOSTNAME=$(echo "$EXTERNAL_N8N_URL" | sed -e "s/https\?:\/\///" | cut -d':' -f1)
+echo "External Home Assistant n8n URL: ${EXTERNAL_N8N_URL}"
+
+INGRESS_URL="${EXTERNAL_N8N_URL}${INGRESS_PATH}"
+WEBHOOK_URL="http://${LOCAL_HA_HOSTNAME}:8081"
+
+echo "Final Ingress Path: ${INGRESS_PATH}"
+echo "Final Ingress URL: ${INGRESS_URL}"
+echo "Final Webhook URL: ${WEBHOOK_URL}"
+
+export N8N_PATH="${INGRESS_PATH}"
+export N8N_EDITOR_BASE_URL="${INGRESS_URL}"
+export WEBHOOK_URL="${WEBHOOK_URL}"
 
 ###########
 ## MAIN  ##
