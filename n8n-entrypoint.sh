@@ -80,16 +80,13 @@ EXTERNAL_N8N_URL=${EXTERNAL_URL:-$(echo "$CONFIG" | jq -r ".external_url // \"$L
 EXTERNAL_HA_HOSTNAME=$(echo "$EXTERNAL_N8N_URL" | sed -e "s/https\?:\/\///" | cut -d':' -f1)
 echo "External Home Assistant n8n URL: ${EXTERNAL_N8N_URL}"
 
-INGRESS_URL="${EXTERNAL_N8N_URL}${INGRESS_PATH}"
-WEBHOOK_URL="http://${LOCAL_HA_HOSTNAME}:8081"
+export N8N_PATH=${N8N_PATH:-INGRESS_PATH}
+export N8N_EDITOR_BASE_URL=${N8N_EDITOR_BASE_URL:-"${EXTERNAL_N8N_URL}${INGRESS_PATH}"}
+export WEBHOOK_URL=${WEBHOOK_URL:-"http://${LOCAL_HA_HOSTNAME}:8081"}
 
-echo "Final Ingress Path: ${INGRESS_PATH}"
-echo "Final Ingress URL: ${INGRESS_URL}"
-echo "Final Webhook URL: ${WEBHOOK_URL}"
-
-export N8N_PATH="${INGRESS_PATH}"
-export N8N_EDITOR_BASE_URL="${INGRESS_URL}"
-export WEBHOOK_URL="${WEBHOOK_URL}"
+echo "N8N_PATH: ${N8N_PATH}"
+echo "N8N_EDITOR_BASE_URL: ${N8N_EDITOR_BASE_URL}"
+echo "WEBHOOK_URL: ${WEBHOOK_URL}"
 
 ###########
 ## MAIN  ##
