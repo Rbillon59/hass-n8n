@@ -19,23 +19,20 @@ echo "Fetched Add-on Info from Supervisor: ${ADDON_INFO}"
 INGRESS_PATH=$(echo "$ADDON_INFO" | jq -r '.data.ingress_url // "/"')
 echo "Extracted Ingress Path from Supervisor: ${INGRESS_PATH}"
 
-# Get the Home Assistant hostname from the supervisor info
-HA_HOSTNAME=$(echo "$INFO" | jq -r '.data.hostname // "localhost"')
-
 # Get the port from the configuration
-HA_PORT=$(echo "$CONFIG" | jq -r '.port // "8123"')
-echo "Home Assistant Port: ${HA_PORT}"
+LOCAL_HA_PORT=$(echo "$CONFIG" | jq -r '.port // "8123"')
+
+# Get the Home Assistant hostname from the supervisor info
+LOCAL_HA_HOSTNAME=$(echo "$INFO" | jq -r '.data.hostname // "localhost"')
+LOCAL_N8N_URL="http://$LOCAL_HA_HOSTNAME:8080"
+echo "Local Home Assistant n8n URL: ${LOCAL_N8N_URL}"
 
 # Get the external URL if configured, otherwise use the hostname and port
-HA_URL=$(echo "$CONFIG" | jq -r ".external_url // \"http://$HA_HOSTNAME:$HA_PORT\"")
-echo "Home Assistant URL: ${HA_URL}"
+EXTERNAL_N8N_URL=${EXTERNAL_URL:-$(echo "$CONFIG" | jq -r ".external_url // \"$LOCAL_N8N_URL\"")}
+echo "External Home Assistant n8n URL: ${EXTERNAL_N8N_URL}"
 
-# Get hostname from HA_URL
-HA_HOSTNAME=$(echo "$HA_URL" | sed -e "s/https\?:\/\///" | cut -d':' -f1)
-
-INGRESS_URL="http://${HA_HOSTNAME}:8080${INGRESS_PATH}"
-WEBHOOK_URL="http://${HA_HOSTNAME}:8081"
-echo "Extracted Ingress URL from Supervisor: ${INGRESS_URL}"
+INGRESS_URL="${EXTERNAL_N8N_URL}${INGRESS_PATH}"
+WEBHOOK_URL="http://${LOCAL_HA_HOSTNAME}:8081"
 
 echo "Final Ingress Path: ${INGRESS_PATH}"
 echo "Final Ingress URL: ${INGRESS_URL}"
@@ -50,16 +47,11 @@ export N8N_USER_FOLDER="${N8N_PATH}"
 export N8N_PATH="${INGRESS_PATH}"
 export N8N_EDITOR_BASE_URL="${INGRESS_URL}"
 export WEBHOOK_URL="${WEBHOOK_URL}"
+
 export N8N_SECURE_COOKIE=false
 export N8N_HIRING_BANNER_ENABLED=false
 export N8N_PERSONALIZATION_ENABLED=false
 export N8N_VERSION_NOTIFICATIONS_ENABLED=false
-
-if [ -z "${N8N_BASIC_AUTH_USER}" ] || [ -z "${N8N_BASIC_AUTH_ACTIVE}" ]; then
-    export N8N_BASIC_AUTH_ACTIVE=false
-    unset N8N_BASIC_AUTH_USER
-    unset N8N_BASIC_AUTH_PASSWORD
-fi
 
 #####################
 ## USER PARAMETERS ##
