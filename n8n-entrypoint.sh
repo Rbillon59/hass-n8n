@@ -5,6 +5,7 @@ export N8N_HIRING_BANNER_ENABLED=false
 export N8N_PERSONALIZATION_ENABLED=false
 export N8N_VERSION_NOTIFICATIONS_ENABLED=false
 
+CONFIG_PATH="/data/options.json"
 export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
 export N8N_PROTOCOL="$(jq --raw-output '.protocol // empty' $CONFIG_PATH)"
 export N8N_SSL_CERT="/ssl/$(jq --raw-output '.certfile // empty' $CONFIG_PATH)"
@@ -45,7 +46,6 @@ if [ -n "${NODE_FUNCTION_ALLOW_EXTERNAL}" ]; then
     done
 fi
 
-CONFIG_PATH="/data/options.json"
 DATA_DIRECTORY_PATH="/data/n8n"
 
 mkdir -p "${DATA_DIRECTORY_PATH}/.n8n/.cache"
