@@ -26,6 +26,7 @@
     "media:rw",
     "config:ro"
   ],
+  "watchdog": "http://[HOST]:[PORT:8080]",
   "ingress": true,
   "ingress_port": 8080,
   "ports": {
