@@ -32,17 +32,17 @@ jobs:
           GH_TOKEN: ${{ secrets.CR_PAT }}
         run: |
           # create new GIT branch
-          git checkout -b automated/update-changelog
+          git checkout -b automated/update-changelog-${{ github.run_id }}
 
           # commit changelog
           git add CHANGELOG.md
           git commit -m "Update CHANGELOG"
-          git push --set-upstream origin automated/update-changelog
+          git push --set-upstream origin automated/update-changelog-${{ github.run_id }}
           
           # create PR
           gh pr create \
             --title "Update CHANGELOG" \
-            --body "This PR updates the CHANGELOG"
+            --body "This PR updates the changelog."
 
           # merge PR
-          gh pr merge automated/update-changelog --merge
+          gh pr merge automated/update-changelog-${{ github.run_id }} --merge
