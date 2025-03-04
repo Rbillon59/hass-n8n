@@ -45,4 +45,4 @@ jobs:
             --body "This PR updates the CHANGELOG"
 
           # merge PR
-          gh pr merge automated/update-changelog
+          gh pr merge automated/update-changelog --merge
