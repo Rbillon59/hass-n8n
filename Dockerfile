@@ -1,4 +1,4 @@
-FROM n8nio/n8n:1.80.3
+FROM n8nio/n8n:1.81.4
 USER root
 RUN apk add --no-cache --update \
     jq \
