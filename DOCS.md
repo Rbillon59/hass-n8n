@@ -1,5 +1,4 @@
 # Installation
-
 Follow these steps to get the add-on installed on your system:
 
 **Important:** Make sure you've added this addon repository to your Home Assistant addon library: https://github.com/Rbillon59/hass-n8n
