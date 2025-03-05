@@ -39,7 +39,8 @@ jobs:
 
           # commit changelog
           git add CHANGELOG.md
-          git commit -m "Update CHANGELOG"
+          git add config.json
+          git commit -m "chore(release): update changelog"
           git push --set-upstream origin automated/update-changelog-${{ github.run_id }}
           git push --tags
           
