@@ -50,12 +50,12 @@ This means that in addition to n8n's credentials, n8n can't be accessed without 
 ### Nabu Casa remote URL
 If you use Nabu Casa remote URL, the addon can't fetch your Nabu Casa remote URL programmatically, in that case, you need to set the `EXTERNAL_URL` environment variable to your Nabu Casa remote URL for things like OAuth2 credentials to work properly (setting the right redirect URLs).
 
-### Webhooks and triggers
-Webhooks and triggers can't go via an Ingress, since having Home Assistant authentication on top of it would break the webhook (they need to be publically accessible and unauthenticated). 
+### Webhooks, triggers and n8n API
+Webhooks, triggers and the n8n API can't go via an Ingress, since having Home Assistant authentication on top of it would break the webhook (they need to be publically accessible and unauthenticated). 
 
-For this reason, the addon exposes all webhook traffic on port `8081`.
+For this reason, the addon exposes all webhook or API traffic on port `8081`.
 
-For webhooks and some webhook-based triggers to work properly, you need to open up a tunnel for port `8081` to the internet via the [Cloudflared addon](https://github.com/brenner-tobias/addon-cloudflared) or something similar. 
+For the n8n API, webhooks and some webhook-based triggers to work properly, you need to open up a tunnel for port `8081` to the internet via the [Cloudflared addon](https://github.com/brenner-tobias/addon-cloudflared) or something similar. 
 
 When done, set the `WEBHOOK_URL` environment variable to the URL of the tunnel.
 
