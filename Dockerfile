@@ -1,4 +1,8 @@
 FROM n8nio/n8n:1.81.4
+
+ARG NGINX_ALLOWED_IP=172.30.32.2
+ENV NGINX_ALLOWED_IP=${NGINX_ALLOWED_IP}
+
 USER root
 RUN apk add --no-cache --update \
     jq \
@@ -6,12 +10,14 @@ RUN apk add --no-cache --update \
     npm \
     curl \
     nginx \
-    supervisor
+    supervisor \
+    envsubst
 WORKDIR /data
 COPY n8n-entrypoint.sh /app/n8n-entrypoint.sh
 
-# Create directory for nginx runtime files
 RUN mkdir -p /run/nginx
+
+COPY nginx.conf /etc/nginx/nginx.conf.template
 
 COPY n8n-entrypoint.sh /app/n8n-entrypoint.sh
 COPY nginx-entrypoint.sh /app/nginx-entrypoint.sh
