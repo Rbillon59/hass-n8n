@@ -1,4 +1,4 @@
-# 3.0.0 (2025-03-05)
+# [3.1.0](https://github.com/Rbillon59/hass-n8n/compare/v3.0.0...v3.1.0) (2025-03-05)
 
 
 ### Bug Fixes
@@ -85,6 +85,7 @@
 * **n8n:** Add an env var to be able to set the instance URL for callbacks and webhooks ([2282021](https://github.com/Rbillon59/hass-n8n/commit/2282021509962553dccced5e283ff41794fc6fef))
 * **n8n:** from [ISSUE [#10](https://github.com/Rbillon59/hass-n8n/issues/10)](https://github.com/Rbillon59/hass-n8n/issues/10) idea to use official image now it's available. ([1dd1a11](https://github.com/Rbillon59/hass-n8n/commit/1dd1a111b5cbaa95d52ef42992210dd92d86c31a))
 * Set share, media and backup as rw, and add config as ro ([64eb148](https://github.com/Rbillon59/hass-n8n/commit/64eb148c8af4ab22a818af90fcf1d9096645ce81))
+* support external access to the API ([12b2005](https://github.com/Rbillon59/hass-n8n/commit/12b200514a7b1b10e5275dfe1cadd9523d7d2751))
 * Update addon to use a user generated env var list instead of hardcoding them ([1882ae8](https://github.com/Rbillon59/hass-n8n/commit/1882ae89a6a78cb87716ccdd0f0839f6dcccee1f))
 
 
