@@ -14,26 +14,20 @@ Follow these steps to get the add-on installed on your system:
 3. Click on the "INSTALL" button.
 
 # Configuration
-In the configuration section, set the port if the default one is not good for you. Enable auth if you want and SSL to.
-Even if unused, let the default variables set.
-
-## Addon Configuration
-Add-on configuration:
-
 ```yaml
 timezone: Europe/Berlin
 env_vars_list: []
 cmd_line_args: ""
 ```
 
-### Option: `env_vars_list` (required)
+## Option: `env_vars_list` (required)
 List of the n8n environment variables. You can add as many environment variables as you want to the list through the UI. The format is the following:
 
 `SOME_ENVIRONMENT_VARIABLE: some-value` (the regular expression is `^[A-Z_0-9]+: .*$` )
 
 All the available environment variables are available here : <https://docs.n8n.io/hosting/environment-variables/environment-variables/>
 
-### Option: `cmd_line_args` (optional)
+## Option: `cmd_line_args` (optional)
 The command line to start n8n. If you want to use a custom command line, you can use this variable.
 
 ## Installing external packages
@@ -44,9 +38,6 @@ For example, to install the `lodash` and the `moment` packages, in the UI, set t
 ```txt
 NODE_FUNCTION_ALLOW_EXTERNAL: lodash,moment
 ```
-
-## How to use it?
-Just start the addon and head to the addon's web UI.
 
 ## Setting up external access
 The addon is presented via a [Home Assistant Ingress](https://www.home-assistant.io/blog/2019/04/15/hassio-ingress/) for additional security. 
@@ -64,6 +55,9 @@ For this reason, the addon exposes all webhook or API traffic on port `8081`.
 For the n8n API, webhooks and some webhook-based triggers to work properly, you need to open up a tunnel for port `8081` to the internet via the [Cloudflared addon](https://github.com/brenner-tobias/addon-cloudflared) or something similar. 
 
 When done, set the `WEBHOOK_URL` environment variable to the URL of the tunnel.
+
+# How to use it?
+Just start the addon and head to the addon's web UI.
 
 ## Useful ressources
 
