@@ -41,7 +41,7 @@ jobs:
           git add CHANGELOG.md
           git commit -m "Update CHANGELOG"
           git push --set-upstream origin automated/update-changelog-${{ github.run_id }}
-          git push --all
+          git push --tags
           
           # create PR
           gh pr create \
