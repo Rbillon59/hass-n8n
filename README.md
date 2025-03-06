@@ -47,6 +47,9 @@ This means that in addition to n8n's credentials, n8n can't be accessed without 
 ### Nabu Casa remote URL
 If you use Nabu Casa remote URL, the addon can't fetch your Nabu Casa remote URL programmatically, in that case, you need to set the `EXTERNAL_URL` environment variable to your Nabu Casa remote URL for things like OAuth2 credentials to work properly (setting the right redirect URLs).
 
+### Manual external URL
+If you are using a manual external URL, Ingress traffic is not relayed via this in a safe manner. In that case, you need to expose port `8080` of the container to a certain port (for instance, `5678`) on Home Assistant, under the "Network" section of the configuration tab of the addon.
+
 ### Webhooks, triggers and n8n API
 Webhooks, triggers and the n8n API can't go via an Ingress, since having Home Assistant authentication on top of it would break the webhook (they need to be publically accessible and unauthenticated). 
 
