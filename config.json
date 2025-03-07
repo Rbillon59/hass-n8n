@@ -1,6 +1,6 @@
 {
   "name": "n8n",
-  "version": "3.1.3",
+  "version": "3.3.1",
   "slug": "hass-n8n",
   "description": "Self host your n8n instance",
   "url": "https://github.com/Rbillon59/hass-n8n",
@@ -40,8 +40,7 @@
   "apparmor": true,
   "options": {
     "timezone": "Europe/Berlin",
-    "env_vars_list": [
-    ],
+    "env_vars_list": [],
     "cmd_line_args": ""
   },
   "schema": {
