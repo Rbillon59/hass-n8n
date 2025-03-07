@@ -13,28 +13,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Update CHANGELOG.md with release notes
-        run: |
-          # Extract tag and release notes from the event payload
-          TAG=$(jq -r '.release.tag_name' "$GITHUB_EVENT_PATH")
-          RELEASE_NOTES=$(jq -r '.release.body' "$GITHUB_EVENT_PATH")
-          
-          # Ensure CHANGELOG.md exists
-          [ -f CHANGELOG.md ] || touch CHANGELOG.md
-
-          # Prepend new release info to the existing CHANGELOG.md
-          { echo -e "# Release ${TAG}\n\n${RELEASE_NOTES}\n\n"; cat CHANGELOG.md; } > CHANGELOG.tmp
-          mv CHANGELOG.tmp CHANGELOG.md
-  
-      - name: Commit and push changes
+      - name: Update CHANGELOG.md and config.json
         env:
           GITHUB_TOKEN: ${{ secrets.CR_PAT }}
           GH_TOKEN: ${{ secrets.CR_PAT }}
         run: |
-          TAG=$(jq -r '.release.tag_name' "$GITHUB_EVENT_PATH")
-
           # create new GIT branch
           git checkout -b "automated/update-changelog-${TAG}"
+
+          # Extract tag and release notes from the event payload
+          TAG=$(jq -r '.release.tag_name' "$GITHUB_EVENT_PATH")
+          RELEASE_NOTES=$(jq -r '.release.body' "$GITHUB_EVENT_PATH")
+
+          # Prepend new release info to the existing CHANGELOG.md
+          { echo -e "# Release ${TAG}\n\n${RELEASE_NOTES}\n\n"; cat CHANGELOG.md; } > CHANGELOG.tmp
+          mv CHANGELOG.tmp CHANGELOG.md
 
           # put new version into config.json
           jq --arg tag "$TAG" '.version = $tag' config.json > config.tmp
