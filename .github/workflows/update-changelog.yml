@@ -31,21 +31,22 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.CR_PAT }}
           GH_TOKEN: ${{ secrets.CR_PAT }}
         run: |
+          TAG=$(jq -r '.release.tag_name' "$GITHUB_EVENT_PATH")
+
           # create new GIT branch
-          git checkout -b automated/update-changelog-${{ steps.changelog.outputs.tag }}
+          git checkout -b "automated/update-changelog-${TAG}"
 
           # put new version into config.json
           jq --arg tag "$TAG" '.version = $tag' config.json > config.tmp
           mv config.tmp config.json
 
           # re-read the tag in this step
-          TAG=$(jq -r '.release.tag_name' "$GITHUB_EVENT_PATH")
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add CHANGELOG.md
           git add config.json
           git commit -m "chore: update changelog for release ${TAG}"
-          git push --set-upstream origin automated/update-changelog-${{ steps.changelog.outputs.tag }}
+          git push --set-upstream origin "automated/update-changelog-${TAG}"
 
           # create PR
           gh pr create \
@@ -53,4 +54,4 @@ jobs:
             --body "This PR updates the changelog."
 
           # merge PR
-          gh pr merge automated/update-changelog-${{ steps.changelog.outputs.tag }} --merge
+          gh pr merge "automated/update-changelog-${TAG}" --merge
