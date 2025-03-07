@@ -1,6 +1,6 @@
 {
   "name": "n8n",
-  "version": "3.1.0",
+  "version": "3.1.2",
   "slug": "hass-n8n",
   "description": "Self host your n8n instance",
   "url": "https://github.com/Rbillon59/hass-n8n",
@@ -18,7 +18,7 @@
   "boot": "auto",
   "icon": "icon.png",
   "logo": "icon.png",
-  "webui": "http://[HOST]:[PORT:8080]/",
+  "webui": "http://[HOST]:[PORT:5678]/",
   "map": [
     "ssl:ro",
     "backup:rw",
@@ -26,14 +26,16 @@
     "media:rw",
     "config:ro"
   ],
-  "watchdog": "http://[HOST]:[PORT:8080]",
+  "watchdog": "http://[HOST]:[PORT:5678]",
   "ingress": true,
-  "ingress_port": 8080,
+  "ingress_port": 5678,
   "ports": {
+    "5678/tcp": null,
     "8081/tcp": 8081
   },
   "ports_description": {
-    "8081/tcp": "The exposed port for N8N webhook-related traffic."
+    "5678/tcp": "The port for all n8n traffic. Normally not exposed, as Home Assistant Ingress is more secure and is recommended. You may expose this port if you want to bypass the Ingress (not recommended for security reasons). See the documentation for more information.",
+    "8081/tcp": "The port for n8n webhook and API-related traffic. Use this to allow running under Home Assistant Ingress while still allowing certain public communication channels to go through and function. See the documentation for more information."
   },
   "apparmor": true,
   "options": {
