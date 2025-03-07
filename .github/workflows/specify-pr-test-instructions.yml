@@ -1,0 +1,17 @@
+name: Comment on PRs how to test them
+
+on:
+  pull_request:
+    branches:
+      - next
+    types: [opened, reopened, synchronize]
+
+jobs:
+  update-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update or create comment on PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: 'This PR can be tested by adding the Home Assistant addon repository `https://github.com/Rbillon59/hass-n8n.git#next`. The `#next` part is important.'
+          comment_tag: 'pr-test-instructions'
