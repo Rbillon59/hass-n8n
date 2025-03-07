@@ -31,8 +31,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.CR_PAT }}
           GH_TOKEN: ${{ secrets.CR_PAT }}
         run: |
-          # create new GIT branch
-          git checkout -b automated/update-changelog-${{ steps.changelog.outputs.tag }}
+          # put new version into config.json
+          jq --arg tag "$TAG" '.version = $tag' config.json > config.tmp
+          mv config.tmp config.json
 
           # put new version into config.json
           jq --arg tag "$TAG" '.version = $tag' config.json > config.tmp
