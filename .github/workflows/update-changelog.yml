@@ -27,7 +27,9 @@ jobs:
           version-path: version
           release-count: 10
           git-push: false
+          skip-git-pull: true
           skip-commit: true
+          skip-bump: true
           fallback-version: 3.0.0
 
       - name: Create and merge changelog PR
@@ -35,13 +37,16 @@ jobs:
           GH_TOKEN: ${{ secrets.CR_PAT }}
         run: |
           # create new GIT branch
-          git checkout -b automated/update-changelog-${{ github.run_id }}
+          git checkout -b automated/update-changelog-${{ steps.changelog.outputs.tag }}
+
+          # bump version in config.json
+          jq '.version = "${{ steps.changelog.outputs.version }}"' config.json > config.json
 
           # commit changelog
           git add CHANGELOG.md
           git add config.json
           git commit -m "chore(release): update changelog"
-          git push --set-upstream origin automated/update-changelog-${{ github.run_id }}
+          git push --set-upstream origin automated/update-changelog-${{ steps.changelog.outputs.tag }}
           git push --tags
           
           # create PR
@@ -50,4 +55,4 @@ jobs:
             --body "This PR updates the changelog."
 
           # merge PR
-          gh pr merge automated/update-changelog-${{ github.run_id }} --merge
+          gh pr merge automated/update-changelog-${{ steps.changelog.outputs.tag }} --merge
