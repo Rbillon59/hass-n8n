@@ -72,12 +72,15 @@ Just start the addon and head to the addon's web UI.
 ### Available integrations
 <https://n8n.io/integrations>
 
-## Support
+## License
+This addon is published under the Apache 2 license. Original author of the addon's bundled software is n8n.
+
+# Troubleshooting
 Got questions?
 
 You can open an issue on GitHub.
 
 Repository: <https://github.com/Rbillon59/hass-n8n>
 
-## License
-This addon is published under the Apache 2 license. Original author of the addon's bundled software is n8n.
+## `401: Unauthorized` in popup-window when trying to set up OAuth-based credential
+This can happen depending on which browser you are using. To work around it, copy the URL of the popup window and paste it into a new tab in the main window. Then the authorization will complete.
