@@ -57,6 +57,9 @@ For the n8n API, webhooks and some webhook-based triggers to work properly, you 
 
 When done, set the `WEBHOOK_URL` environment variable to the URL of the tunnel.
 
+### Bypassing Home Assistant Ingress entirely (not recommended)
+If you want to, you can expose n8n without requiring to go through the Ingress. This is done in the "ports" section of the "configuration" tab of the addon.
+
 # How to use it?
 Just start the addon and head to the addon's web UI.
 
