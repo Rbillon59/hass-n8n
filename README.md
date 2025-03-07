@@ -2,8 +2,6 @@
 
 n8n (pronounced n-eight-n) helps you to interconnect every app with an API in the world with each other to share and manipulate its data without a single line of code. It is an easy to use, user-friendly and highly customizable service, which uses an intuitive user interface for you to design your unique workflows very fast. Hosted on your server and not based in the cloud, it keeps your sensible data very secure in your own trusted database.
 
-See the [addon documentation](https://github.com/Rbillon59/hass-n8n/blob/master/DOCS.md) for more information on installation and configuration.
-
 # Installation
 Follow these steps to get the add-on installed on your system:
 
@@ -48,7 +46,7 @@ This means that in addition to n8n's credentials, n8n can't be accessed without 
 If you use Nabu Casa remote URL, the addon can't fetch your Nabu Casa remote URL programmatically, in that case, you need to set the `EXTERNAL_URL` environment variable to your Nabu Casa remote URL for things like OAuth2 credentials to work properly (setting the right redirect URLs).
 
 ### Manual external URL
-If you are using a manual external URL, Ingress traffic is not relayed via this in a safe manner. In that case, you need to expose port `8080` of the container to a certain port (for instance, `5678`) on Home Assistant, under the "Network" section of the configuration tab of the addon.
+If you are using a manual external URL, Ingress traffic is not relayed via this in a safe manner. In that case, you need to expose port `5678` of the container to a certain port (for instance, `5678`) on Home Assistant, under the "Network" section of the configuration tab of the addon.
 
 ### Webhooks, triggers and n8n API
 Webhooks, triggers and the n8n API can't go via an Ingress, since having Home Assistant authentication on top of it would break the webhook (they need to be publically accessible and unauthenticated). 

@@ -6,7 +6,7 @@ docker build \
     .
 
 docker run \
-    -p 8080:8080 \
+    -p 5678:5678 \
     -p 8081:8081 \
     hass-n8n \
     --name hass-n8n
