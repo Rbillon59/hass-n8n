@@ -1,12 +1,8 @@
 name: Update CHANGELOG
 
 on:
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - '*.md'
-      - 'config.json'
+  release:
+    types: [published]
 
 jobs:
   update_changelog:
@@ -17,42 +13,32 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Generate changelog from pull requests
-        id: changelog
-        uses: TriPSs/conventional-changelog-action@latest
-        with:
-          github-token: ${{ secrets.CR_PAT }}
-          output-file: CHANGELOG.md
-          version-file: ./config.json
-          version-path: version
-          release-count: 10
-          git-push: false
-          skip-git-pull: true
-          skip-commit: true
-          skip-bump: true
-          fallback-version: 3.0.0
-
-      - name: Create and merge changelog PR
-        env:
-          GH_TOKEN: ${{ secrets.CR_PAT }}
+      - name: Update CHANGELOG.md with release notes
         run: |
-          # create new GIT branch
-          git checkout -b automated/update-changelog-${{ steps.changelog.outputs.tag }}
+          # Extract tag and release notes from the event payload
+          TAG=$(jq -r '.release.tag_name' "$GITHUB_EVENT_PATH")
+          RELEASE_NOTES=$(jq -r '.release.body' "$GITHUB_EVENT_PATH")
+          
+          # Ensure CHANGELOG.md exists
+          [ -f CHANGELOG.md ] || touch CHANGELOG.md
 
-          # bump version in config.json
-          jq '.version = "${{ steps.changelog.outputs.version }}"' config.json > config.json
+          # Prepend new release info to the existing CHANGELOG.md
+          { echo -e "# Release ${TAG}\n\n${RELEASE_NOTES}\n\n"; cat CHANGELOG.md; } > CHANGELOG.tmp
+          mv CHANGELOG.tmp CHANGELOG.md
+  
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.CR_PAT }}
+        run: |
+          # put new version into config.json
+          jq --arg tag "$TAG" '.version = $tag' config.json > config.tmp
+          mv config.tmp config.json
 
-          # commit changelog
+          # Re-read the tag in this step
+          TAG=$(jq -r '.release.tag_name' "$GITHUB_EVENT_PATH")
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add CHANGELOG.md
           git add config.json
-          git commit -m "chore(release): update changelog"
-          git push --set-upstream origin automated/update-changelog-${{ steps.changelog.outputs.tag }}
-          git push --tags
-          
-          # create PR
-          gh pr create \
-            --title "Update CHANGELOG" \
-            --body "This PR updates the changelog."
-
-          # merge PR
-          gh pr merge automated/update-changelog-${{ steps.changelog.outputs.tag }} --merge
+          git commit -m "chore: update changelog for release ${TAG}"
+          git push
