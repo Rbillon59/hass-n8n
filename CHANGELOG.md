@@ -1,3 +1,13 @@
+# Release 3.3.3
+
+## What's Changed
+* chore: update changelog for release 3.3.2 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/222
+* fix: add troubleshooting section, fixes #212 by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/223
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.2...3.3.3
+
+
 # Release 3.3.2
 
 ## What's Changed
