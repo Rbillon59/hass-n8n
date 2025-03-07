@@ -18,12 +18,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.CR_PAT }}
           GH_TOKEN: ${{ secrets.CR_PAT }}
         run: |
-          # create new GIT branch
-          git checkout -b "automated/update-changelog-${TAG}"
-
           # Extract tag and release notes from the event payload
           TAG=$(jq -r '.release.tag_name' "$GITHUB_EVENT_PATH")
           RELEASE_NOTES=$(jq -r '.release.body' "$GITHUB_EVENT_PATH")
+          
+          # create new GIT branch
+          git checkout -b "automated/update-changelog-${TAG}"
 
           # Prepend new release info to the existing CHANGELOG.md
           { echo -e "# Release ${TAG}\n\n${RELEASE_NOTES}\n\n"; cat CHANGELOG.md; } > CHANGELOG.tmp
