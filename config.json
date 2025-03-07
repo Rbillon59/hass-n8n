@@ -18,7 +18,7 @@
   "boot": "auto",
   "icon": "icon.png",
   "logo": "icon.png",
-  "webui": "http://[HOST]:[PORT:5678]/",
+  "webui": "http://[HOST]:[PORT:5690]/",
   "map": [
     "ssl:ro",
     "backup:rw",
@@ -26,9 +26,9 @@
     "media:rw",
     "config:ro"
   ],
-  "watchdog": "http://[HOST]:[PORT:5678]",
+  "watchdog": "http://[HOST]:[PORT:5690]",
   "ingress": true,
-  "ingress_port": 5678,
+  "ingress_port": 5690,
   "ports": {
     "5678/tcp": null,
     "8081/tcp": 8081

@@ -75,7 +75,7 @@ LOCAL_HA_PORT=$(echo "$CONFIG" | jq -r '.port // "8123"')
 
 # Get the Home Assistant hostname from the supervisor info
 LOCAL_HA_HOSTNAME=$(echo "$INFO" | jq -r '.data.hostname // "localhost"')
-LOCAL_N8N_URL="http://$LOCAL_HA_HOSTNAME:5678"
+LOCAL_N8N_URL="http://$LOCAL_HA_HOSTNAME:5690"
 echo "Local Home Assistant n8n URL: ${LOCAL_N8N_URL}"
 
 # Get the external URL if configured, otherwise use the hostname and port
