@@ -1,3 +1,17 @@
+# Release 3.3.4
+
+## What's Changed
+* chore: update changelog for release 3.3.3 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/224
+* docs: elaborate on how to bypass ingress by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/225
+* docs: clarify bypassing home assistant by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/227
+* chore(deps): bump n8nio/n8n from 1.81.4 to 1.82.1 by @dependabot in https://github.com/Rbillon59/hass-n8n/pull/228
+* ci: fix auto-merge of dependabot by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/230
+* chore(deps): bump n8nio/n8n from 1.82.1 to 1.82.3 by @dependabot in https://github.com/Rbillon59/hass-n8n/pull/229
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.3...3.3.4
+
+
 # Release 3.3.3
 
 ## What's Changed
