@@ -16,4 +16,4 @@ jobs:
         run: |
           gh pr merge ${{ github.event.pull_request.number }} \
             --auto \
-            --merge-method=squash
+            --squash
