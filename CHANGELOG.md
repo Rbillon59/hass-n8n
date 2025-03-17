@@ -1,3 +1,14 @@
+# Release 3.3.5
+
+## What's Changed
+* chore: update changelog for release 3.3.4 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/231
+* chore(deps): bump n8nio/n8n from 1.82.3 to 1.83.2 by @dependabot in https://github.com/Rbillon59/hass-n8n/pull/232
+* Update auto-merge-dependabot.yaml by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/233
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.4...3.3.5
+
+
 # Release 3.3.4
 
 ## What's Changed
