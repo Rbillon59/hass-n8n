@@ -1,3 +1,16 @@
+# Release 3.3.6
+
+## What's Changed
+* chore: update changelog for release 3.3.5 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/234
+* chore(deps): bump n8nio/n8n from 1.83.2 to 1.84.1 by @dependabot in https://github.com/Rbillon59/hass-n8n/pull/235
+* chore(deps): bump n8nio/n8n from 1.84.1 to 1.84.3 by @dependabot in https://github.com/Rbillon59/hass-n8n/pull/237
+* chore(deps): bump n8nio/n8n from 1.84.3 to 1.86.1 by @dependabot in https://github.com/Rbillon59/hass-n8n/pull/246
+* chore(deps): bump n8nio/n8n from 1.86.1 to 1.88.0 by @dependabot in https://github.com/Rbillon59/hass-n8n/pull/248
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.5...3.3.6
+
+
 # Release 3.3.5
 
 ## What's Changed
