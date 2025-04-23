@@ -1,3 +1,15 @@
+# Release 3.3.8
+
+## What's Changed
+* chore: update changelog for release 3.3.7 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/256
+* nginx-config: fix connection lost issue by @oetken in https://github.com/Rbillon59/hass-n8n/pull/252
+
+## New Contributors
+* @oetken made their first contribution in https://github.com/Rbillon59/hass-n8n/pull/252
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.7...3.3.8
+
+
 # Release 3.3.7
 
 ## What's Changed
