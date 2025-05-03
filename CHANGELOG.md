@@ -1,3 +1,15 @@
+# Release 3.4.1
+
+## What's Changed
+* chore: update changelog for release 3.4.0 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/264
+* fix: connection lost issue due to websocket invalid origin by @sekertr in https://github.com/Rbillon59/hass-n8n/pull/266
+
+## New Contributors
+* @sekertr made their first contribution in https://github.com/Rbillon59/hass-n8n/pull/266
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.0...3.4.1
+
+
 # Release 3.4.0
 
 ## What's Changed
