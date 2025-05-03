@@ -1,3 +1,13 @@
+# Release 3.4.0
+
+## What's Changed
+* chore: update changelog for release 3.3.9 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/262
+* fix: disable watchdog by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/263
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.9...3.4.0
+
+
 # Release 3.3.9
 
 ## What's Changed
