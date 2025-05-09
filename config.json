@@ -18,6 +18,7 @@
   "boot": "auto",
   "icon": "icon.png",
   "logo": "icon.png",
+  "panel_icon": "mdi:sitemap-outline",
   "webui": "http://[HOST]:[PORT:5690]/",
   "map": [
     "ssl:ro",
