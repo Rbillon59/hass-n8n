@@ -1,3 +1,15 @@
+# Release 3.4.4
+
+## What's Changed
+* chore: update changelog for release 3.4.3 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/271
+* added Home Assistant Sidebar Icon by @sekertr in https://github.com/Rbillon59/hass-n8n/pull/272
+* chore(deps): bump n8nio/n8n from 1.91.3 to 1.92.2 by @dependabot in https://github.com/Rbillon59/hass-n8n/pull/273
+* chore(deps): bump n8nio/n8n from 1.92.2 to 1.93.0 by @dependabot in https://github.com/Rbillon59/hass-n8n/pull/274
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.3...3.4.4
+
+
 # Release 3.4.3
 
 ## What's Changed
