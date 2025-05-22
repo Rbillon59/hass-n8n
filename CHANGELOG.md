@@ -1,3 +1,13 @@
+# Release 3.4.5
+
+## What's Changed
+* Update CHANGELOG.md by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/276
+* fix: add /form route to Nginx reverse proxy configuration by @sekertr in https://github.com/Rbillon59/hass-n8n/pull/277
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.4...3.4.5
+
+
 # Release 3.4.4
 
 ## What's Changed
