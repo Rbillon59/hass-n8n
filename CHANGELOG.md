@@ -1,3 +1,13 @@
+# Release 3.4.6
+
+## What's Changed
+* chore: update changelog for release 3.4.5 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/278
+* chore(deps): bump n8nio/n8n from 1.93.0 to 1.94.0 by @dependabot in https://github.com/Rbillon59/hass-n8n/pull/279
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.5...3.4.6
+
+
 # Release 3.4.5
 
 ## What's Changed
