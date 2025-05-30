@@ -1,3 +1,13 @@
+# Release 4.0.10
+
+## What's Changed
+* chore: update changelog for release 4.0.9 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/312
+* fix: yet another backup size fix attempt by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/313
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.9...4.0.10
+
+
 # Release 4.0.9
 
 ## What's Changed
