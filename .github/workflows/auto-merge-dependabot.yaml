@@ -1,5 +1,7 @@
 name: Auto-merge Dependabot PRs
 
+permissions: write-all
+
 on:
   pull_request:
     types: [opened, reopened]
