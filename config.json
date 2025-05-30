@@ -29,6 +29,7 @@
   ],
   "ingress": true,
   "ingress_port": 5690,
+  "ingress_stream": true,
   "ports": {
     "5678/tcp": null,
     "8081/tcp": 8081
