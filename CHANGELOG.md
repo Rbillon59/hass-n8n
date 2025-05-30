@@ -1,3 +1,15 @@
+# Release 4.0.0
+
+## What's Changed
+* chore: update changelog for release 3.4.9 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/290
+* fix: improve ingress stability by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/291
+* ci: add permissions for auto-merge of Dependabot by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/292
+* fix!: changed to remote image to reduce backup size by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/293
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.9...4.0.0
+
+
 # Release 3.4.9
 
 ## What's Changed
