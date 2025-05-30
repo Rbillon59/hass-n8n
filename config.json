@@ -12,7 +12,7 @@
     "aarch64",
     "amd64"
   ],
-  "image": "ghcr.io/Rbillon59/hass-n8n-{arch}",
+  "image": "ghcr.io/rbillon59/hass-n8n-{arch}",
   "startup": "application",
   "boot": "auto",
   "icon": "icon.png",
