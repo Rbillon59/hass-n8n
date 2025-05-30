@@ -9,11 +9,10 @@
   "homeassistant_api": true,
   "arch": [
     "armhf",
-    "armv7",
     "aarch64",
-    "amd64",
-    "i386"
+    "amd64"
   ],
+  "image": "ghcr.io/Rbillon59/hass-n8n-{arch}",
   "startup": "application",
   "boot": "auto",
   "icon": "icon.png",
