@@ -8,7 +8,6 @@
   "hassio_role": "default",
   "homeassistant_api": true,
   "arch": [
-    "armhf",
     "aarch64",
     "amd64"
   ],
