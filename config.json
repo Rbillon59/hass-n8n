@@ -13,8 +13,8 @@
   ],
   "backup_exclude": [
     "/data/n8n/.cache",
-    "/data/n8n/n8nEventLog*.log",
-    "/data/n8n/crash.journal",
+    "/data/n8n/.n8n/n8nEventLog*.log",
+    "/data/n8n/.n8n/crash.journal",
     "/data/supervisord.log*"
   ],
   "image": "ghcr.io/rbillon59/hass-n8n-{arch}",
