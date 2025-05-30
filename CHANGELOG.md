@@ -1,3 +1,13 @@
+# Release 4.0.4
+
+## What's Changed
+* chore: update changelog for release 4.0.3 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/300
+* ci: use proper architecture names by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/301
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.3...4.0.4
+
+
 # Release 4.0.3
 
 ## What's Changed
