@@ -1,6 +1,6 @@
 {
   "name": "n8n",
-  "version": "3.3.2",
+  "version": "3.4.9",
   "slug": "hass-n8n",
   "description": "Self host your n8n instance",
   "url": "https://github.com/Rbillon59/hass-n8n",
@@ -9,15 +9,15 @@
   "homeassistant_api": true,
   "arch": [
     "armhf",
-    "armv7",
     "aarch64",
-    "amd64",
-    "i386"
+    "amd64"
   ],
+  "image": "ghcr.io/Rbillon59/hass-n8n-{arch}",
   "startup": "application",
   "boot": "auto",
   "icon": "icon.png",
   "logo": "icon.png",
+  "panel_icon": "mdi:sitemap-outline",
   "webui": "http://[HOST]:[PORT:5690]/",
   "map": [
     "ssl:ro",
@@ -26,9 +26,9 @@
     "media:rw",
     "config:ro"
   ],
-  "watchdog": "http://[HOST]:[PORT:5690]",
   "ingress": true,
   "ingress_port": 5690,
+  "ingress_stream": true,
   "ports": {
     "5678/tcp": null,
     "8081/tcp": 8081

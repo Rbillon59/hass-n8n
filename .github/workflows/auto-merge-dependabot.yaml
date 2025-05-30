@@ -1,5 +1,7 @@
 name: Auto-merge Dependabot PRs
 
+permissions: write-all
+
 on:
   pull_request:
     types: [opened, reopened]
@@ -9,11 +11,16 @@ jobs:
     if: github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
 
-    steps:
+    steps:      
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
       - name: Enable auto-merge using GitHub CLI
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh pr merge ${{ github.event.pull_request.number }} \
             --auto \
-            --merge-method=squash
+            --squash

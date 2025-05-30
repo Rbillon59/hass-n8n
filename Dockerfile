@@ -1,7 +1,15 @@
-FROM n8nio/n8n:1.81.4
+FROM n8nio/n8n:1.94.1
 
 ARG NGINX_ALLOWED_IP=172.30.32.2
 ENV NGINX_ALLOWED_IP=${NGINX_ALLOWED_IP}
+
+ARG BUILD_VERSION
+ARG BUILD_ARCH
+
+LABEL \
+  io.hass.version="${BUILD_VERSION}" \
+  io.hass.type="addon" \
+  io.hass.arch="${BUILD_ARCH}"
 
 USER root
 RUN apk add --no-cache --update \
