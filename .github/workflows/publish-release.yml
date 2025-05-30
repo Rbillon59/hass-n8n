@@ -58,7 +58,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        arch: [amd64, arm64]
+        arch: [
+            {
+              docker_name: amd64,
+              hass_name: amd64
+            }, 
+            {
+              docker_name: arm64,
+              hass_name: aarch64
+            }
+          ]
 
     steps:
     - name: Checkout repository
@@ -84,10 +93,10 @@ jobs:
       with:
         context: .
         push: true
-        platforms: linux/${{ matrix.arch }}
+        platforms: linux/${{ matrix.arch.docker_name }}
         build-args: |
           BUILD_VERSION=${{ env.TAG }}
-          BUILD_ARCH=${{ matrix.arch }}
+          BUILD_ARCH=${{ matrix.arch.hass_name }}
         tags: |
-          ghcr.io/rbillon59/hass-n8n-${{ matrix.arch }}:${{ env.TAG }}
-          ghcr.io/rbillon59/hass-n8n-${{ matrix.arch }}:latest
+          ghcr.io/rbillon59/hass-n8n-${{ matrix.arch.hass_name }}:${{ env.TAG }}
+          ghcr.io/rbillon59/hass-n8n-${{ matrix.arch.hass_name }}:latest
