@@ -1,3 +1,13 @@
+# Release 4.0.6
+
+## What's Changed
+* chore: update changelog for release 4.0.5 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/304
+* fix: even smaller backups by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/305
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.5...4.0.6
+
+
 # Release 4.0.5
 
 ## What's Changed
