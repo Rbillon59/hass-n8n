@@ -89,5 +89,5 @@ jobs:
           BUILD_VERSION=${{ env.TAG }}
           BUILD_ARCH=${{ matrix.arch }}
         tags: |
-          ghcr.io/${{ github.repository_owner }}/hass-n8n-${{ matrix.arch }}:${{ env.TAG }}
-          ghcr.io/${{ github.repository_owner }}/hass-n8n-${{ matrix.arch }}:latest
+          ghcr.io/rbillon59/hass-n8n-${{ matrix.arch }}:${{ env.TAG }}
+          ghcr.io/rbillon59/hass-n8n-${{ matrix.arch }}:latest

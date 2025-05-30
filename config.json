@@ -1,6 +1,6 @@
 {
   "name": "n8n",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "slug": "hass-n8n",
   "description": "Self host your n8n instance",
   "url": "https://github.com/Rbillon59/hass-n8n",
@@ -12,7 +12,7 @@
     "aarch64",
     "amd64"
   ],
-  "image": "ghcr.io/Rbillon59/hass-n8n-{arch}",
+  "image": "ghcr.io/rbillon59/hass-n8n-{arch}",
   "startup": "application",
   "boot": "auto",
   "icon": "icon.png",
