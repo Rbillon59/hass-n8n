@@ -1,3 +1,13 @@
+# Release 4.0.9
+
+## What's Changed
+* chore: update changelog for release 4.0.8 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/310
+* fix: correct wrong exclude paths by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/311
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.8...4.0.9
+
+
 # Release 4.0.8
 
 ## What's Changed
