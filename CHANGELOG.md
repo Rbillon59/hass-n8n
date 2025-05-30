@@ -1,3 +1,13 @@
+# Release 4.0.3
+
+## What's Changed
+* chore: update changelog for release 4.0.2 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/298
+* fix: remove unsupported architectures by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/299
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.2...4.0.3
+
+
 # Release 4.0.2
 
 ## What's Changed
