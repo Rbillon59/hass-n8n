@@ -1,3 +1,13 @@
+# Release 4.0.5
+
+## What's Changed
+* chore: update changelog for release 4.0.4 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/302
+* ci: switch to github token in attempt to fix auth issue by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/303
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.4...4.0.5
+
+
 # Release 4.0.4
 
 ## What's Changed
