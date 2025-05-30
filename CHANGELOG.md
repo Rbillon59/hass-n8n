@@ -3,6 +3,18 @@
 ## What's Changed
 * chore: update changelog for release 3.4.7 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/282
 * fix: add docker labels in attempt to fix backup size issue by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/284
+* chore: update changelog for release 3.5.0 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/286
+* fix: add missing ARG statements to dockerfile by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/285
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.7...3.5.0
+
+
+# Release 3.5.0
+
+## What's Changed
+* chore: update changelog for release 3.4.7 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/282
+* fix: add docker labels in attempt to fix backup size issue by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/284
 
 
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.7...3.5.0
