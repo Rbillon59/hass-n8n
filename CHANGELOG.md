@@ -1,3 +1,13 @@
+# Release 3.4.9
+
+## What's Changed
+* docs: update changelog manually to resolve temporary issue by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/288
+* fix: add missing line break indicator to dockerfile by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/289
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.8...3.4.9
+
+
 # Release 3.4.8
 
 ## What's Changed
