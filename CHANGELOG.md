@@ -1,3 +1,13 @@
+# Release 4.0.8
+
+## What's Changed
+* chore: update changelog for release 4.0.7 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/308
+* fix: configure supervisord for better log retention cleanup and restarting by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/309
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.7...4.0.8
+
+
 # Release 4.0.7
 
 ## What's Changed
