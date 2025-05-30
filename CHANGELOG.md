@@ -1,3 +1,13 @@
+# Release 4.0.1
+
+## What's Changed
+* chore: update changelog for release 4.0.0 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/294
+* fix: lowercase package registry URL by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/295
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.0...4.0.1
+
+
 # Release 4.0.0
 
 ## What's Changed
