@@ -8,7 +8,7 @@ ARG BUILD_ARCH
 
 LABEL \
   io.hass.version="${BUILD_VERSION}" \
-  io.hass.type="addon"
+  io.hass.type="addon" \
   io.hass.arch="${BUILD_ARCH}"
 
 USER root
