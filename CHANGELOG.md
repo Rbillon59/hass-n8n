@@ -1,3 +1,14 @@
+# Release 4.0.12
+
+## What's Changed
+* chore: update changelog for release 4.0.11 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/316
+* chore(deps): bump n8nio/n8n from 1.95.2 to 1.95.3 by @dependabot in https://github.com/Rbillon59/hass-n8n/pull/317
+* fix: disable all nginx timeouts by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/318
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.11...4.0.12
+
+
 # Release 4.0.11
 
 ## What's Changed
