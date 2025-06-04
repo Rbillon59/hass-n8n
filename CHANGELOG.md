@@ -1,3 +1,13 @@
+# Release 4.0.13
+
+## What's Changed
+* chore: update changelog for release 4.0.12 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/319
+* fix: increase nginx timeouts even further by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/320
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.12...4.0.13
+
+
 # Release 4.0.12
 
 ## What's Changed
