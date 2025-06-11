@@ -44,7 +44,7 @@
   },
   "apparmor": true,
   "options": {
-    "timezone": "Europe/Berlin",
+    "timezone": "Europe/Istanbul",
     "env_vars_list": [],
     "cmd_line_args": ""
   },
