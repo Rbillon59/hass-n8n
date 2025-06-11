@@ -85,7 +85,7 @@ jobs:
     - uses: docker/login-action@v3               
       with:
         registry: ghcr.io
-        username: Rbillon59
+        username: sekertr
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Build & push
@@ -98,5 +98,5 @@ jobs:
           BUILD_VERSION=${{ env.TAG }}
           BUILD_ARCH=${{ matrix.arch.hass_name }}
         tags: |
-          ghcr.io/rbillon59/hass-n8n-${{ matrix.arch.hass_name }}:${{ env.TAG }}
-          ghcr.io/rbillon59/hass-n8n-${{ matrix.arch.hass_name }}:latest
+          ghcr.io/sekertr/hass-n8n-${{ matrix.arch.hass_name }}:${{ env.TAG }}
+          ghcr.io/sekertr/hass-n8n-${{ matrix.arch.hass_name }}:latest
