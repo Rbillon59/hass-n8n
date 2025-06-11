@@ -1,6 +1,6 @@
 {
   "name": "n8n",
-  "version": "2.0.0",
+  "version": "1.98.0",
   "slug": "hass-n8n",
   "description": "Self host your n8n instance",
   "url": "https://github.com/sekertr/hass-n8n",
