@@ -17,7 +17,7 @@
     "n8n/.n8n/crash.journal",
     "supervisord.log*"
   ],
-  "image": "ghcr.io/rbillon59/hass-n8n-{arch}",
+  "image": "ghcr.io/sekertr/hass-n8n-{arch}",
   "startup": "application",
   "boot": "auto",
   "icon": "icon.png",
