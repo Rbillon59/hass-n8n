@@ -1,3 +1,13 @@
+# Release 4.0.14
+
+## What's Changed
+* chore: update changelog for release 4.0.13 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/321
+* fix: connection lost issue due to invalid origin by @sekertr in https://github.com/Rbillon59/hass-n8n/pull/323
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.13...4.0.14
+
+
 # Release 4.0.13
 
 ## What's Changed
