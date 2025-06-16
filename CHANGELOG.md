@@ -1,3 +1,15 @@
+# Release 4.1.2
+
+## What's Changed
+* chore: update changelog for release 4.1.1 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/330
+* Update nginx.conf to fix Gmail OAuth2 Error: Insufficient parameters … by @ecaridade in https://github.com/Rbillon59/hass-n8n/pull/332
+
+## New Contributors
+* @ecaridade made their first contribution in https://github.com/Rbillon59/hass-n8n/pull/332
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.1.1...4.1.2
+
+
 # Release 4.1.1
 
 ## What's Changed
