@@ -1,3 +1,14 @@
+# Release 4.2.0
+
+## What's Changed
+* chore: update changelog for release 4.1.2 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/333
+* chore(deps): bump n8nio/n8n from 1.97.1 to 1.98.1 by @dependabot in https://github.com/Rbillon59/hass-n8n/pull/334
+* feat: add support for MCP nodes by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/335
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.1.2...4.2.0
+
+
 # Release 4.1.2
 
 ## What's Changed
