@@ -3,7 +3,12 @@
 n8n (pronounced n-eight-n) helps you to interconnect every app with an API in the world with each other to share and manipulate its data without a single line of code. It is an easy to use, user-friendly and highly customizable service, which uses an intuitive user interface for you to design your unique workflows very fast. Hosted on your server and not based in the cloud, it keeps your sensible data very secure in your own trusted database.
 
 # Installation
-Follow these steps to get the add-on installed on your system:
+
+To install, click the button below:
+
+[![Open your Home Assistant instance and show the dashboard of an add-on.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=6560bdea_hass-n8n&repository_url=https%3A%2F%2Fgithub.com%2FRbillon59%2Fhass-n8n)
+
+Or, follow these steps to get the add-on installed on your system:
 
 **Important:** Make sure you've added this addon repository to your Home Assistant addon library: https://github.com/Rbillon59/hass-n8n
 
