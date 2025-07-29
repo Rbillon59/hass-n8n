@@ -1,3 +1,13 @@
+# Release 4.2.6
+
+## What's Changed
+* chore: update changelog for release 4.2.5 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/356
+* chore(deps): bump n8nio/n8n from 1.103.2 to 1.104.1 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/357
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.5...4.2.6
+
+
 # Release 4.2.5
 
 ## What's Changed
