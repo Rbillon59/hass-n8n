@@ -1,0 +1,43 @@
+{
+    "allowlist_external_dirs": [
+        "/media",
+        "/config/www"
+    ],
+    "allowlist_external_urls": [],
+    "components": [
+        "zha",
+        "update"
+    ],
+    "config_dir": "/config",
+    "config_source": "storage",
+    "country": "DK",
+    "currency": "DKK",
+    "debug": false,
+    "elevation": 12,
+    "external_url": null,
+    "internal_url": null,
+    "language": "da",
+    "latitude": 120.201296,
+    "location_name": "Home",
+    "longitude": 15.2011,
+    "radius": 100,
+    "recovery_mode": false,
+    "safe_mode": false,
+    "state": "RUNNING",
+    "time_zone": "Europe/Copenhagen",
+    "unit_system": {
+        "length": "km",
+        "accumulated_precipitation": "mm",
+        "area": "m²",
+        "mass": "g",
+        "pressure": "Pa",
+        "temperature": "°C",
+        "volume": "L",
+        "wind_speed": "m/s"
+    },
+    "version": "2025.7.4",
+    "whitelist_external_dirs": [
+        "/media",
+        "/config/www"
+    ]
+}

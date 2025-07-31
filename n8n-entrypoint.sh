@@ -51,15 +51,15 @@ fi
 export N8N_USER_FOLDER="/data/n8n"
 echo "N8N_USER_FOLDER: ${N8N_USER_FOLDER}"
 
-INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/info)
+INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/info || echo $INFO_FALLBACK)
 INFO=${INFO:-'{}'}
 echo "Fetched Info from Supervisor: ${INFO}"
 
-CONFIG=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/core/api/config)
+CONFIG=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/core/api/config || echo $CONFIG_FALLBACK)
 CONFIG=${CONFIG:-'{}'}
 echo "Fetched Config from Supervisor: ${CONFIG}"
 
-ADDON_INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/addons/self/info)
+ADDON_INFO=$(curl -s -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" http://supervisor/addons/self/info || echo $ADDON_INFO_FALLBACK)
 ADDON_INFO=${ADDON_INFO:-'{}'}
 echo "Fetched Add-on Info from Supervisor: ${ADDON_INFO}"
 
