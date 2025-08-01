@@ -1,3 +1,27 @@
+# Release 4.2.8
+
+## What's Changed
+* chore: update changelog for release 4.2.7 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/363
+* chore: update n8n manually to preview version by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/364
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.7...4.2.8
+
+
+# Release 4.2.7
+
+## What's Changed
+* chore: update changelog for release 4.2.6 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/358
+* fix: don't limit request sizes by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/360
+* docs: update README to include My Home Assistant link by @IceBotYT in https://github.com/Rbillon59/hass-n8n/pull/350
+* chore(deps): bump n8nio/n8n from 1.104.1 to 1.104.2 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/362
+
+## New Contributors
+* @IceBotYT made their first contribution in https://github.com/Rbillon59/hass-n8n/pull/350
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.6...4.2.7
+
+
 # Release 4.2.6
 
 ## What's Changed
