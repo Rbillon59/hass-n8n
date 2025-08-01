@@ -1,3 +1,13 @@
+# Release 4.2.8
+
+## What's Changed
+* chore: update changelog for release 4.2.7 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/363
+* chore: update n8n manually to preview version by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/364
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.7...4.2.8
+
+
 # Release 4.2.7
 
 ## What's Changed
