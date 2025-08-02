@@ -1,0 +1,113 @@
+{
+    "result": "ok",
+    "data": {
+        "name": "n8n",
+        "slug": "21f64f9f_hass-n8n",
+        "hostname": "21f64f9f-hass-n8n",
+        "dns": [
+            "21f64f9f-hass-n8n.local.hass.io"
+        ],
+        "description": "Self host your n8n instance",
+        "long_description": "# What is n8n?\n\nn8n (pronounced n-eight-n) helps you to interconnect every app with an API in the world with each other to share and manipulate its data without a single line of code. It is an easy to use, user-friendly and highly customizable service, which uses an intuitive user interface for you to design your unique workflows very fast. Hosted on your server and not based in the cloud, it keeps your sensible data very secure in your own trusted database.\n\n# Installation\nFollow these steps to get the add-on installed on your system:\n\n**Important:** Make sure you've added this addon repository to your Home Assistant addon library: https://github.com/Rbillon59/hass-n8n\n\n1. Navigate in your Home Assistant frontend to **Supervisor** -> **Add-on Store**.\n2. Find the \"hass-n8n\" add-on and click it.\n3. Click on the \"INSTALL\" button.\n\n# Configuration\n```yaml\ntimezone: Europe/Berlin\nenv_vars_list: []\ncmd_line_args: \"\"\n```\n\n## Option: `env_vars_list` (required)\nList of the n8n environment variables. You can add as many environment variables as you want to the list through the UI. The format is the following:\n\n`SOME_ENVIRONMENT_VARIABLE: some-value` (the regular expression is `^[A-Z_0-9]+: .*$` )\n\nAll the available environment variables are available here : <https://docs.n8n.io/hosting/environment-variables/environment-variables/>\n\n## Option: `cmd_line_args` (optional)\nThe command line to start n8n. If you want to use a custom command line, you can use this variable.\n\n## Installing external packages\nIn n8n you can add external node modules by setting the `NODE_FUNCTION_ALLOW_EXTERNAL` environment variable with the list of npm packages you need.\n\nFor example, to install the `lodash` and the `moment` packages, in the UI, set the `env_vars_list` variable to:\n\n```txt\nNODE_FUNCTION_ALLOW_EXTERNAL: lodash,moment\n```\n\n## Setting up external access\nThe addon is presented via a [Home Assistant Ingress](https://www.home-assistant.io/blog/2019/04/15/hassio-ingress/) for additional security. \n\nThis means that in addition to n8n's credentials, n8n can't be accessed without being authenticated with Home Assistant as well, even when accessing it remotely.\n\n### Nabu Casa remote URL\nIf you use Nabu Casa remote URL, the addon can't fetch your Nabu Casa remote URL programmatically, in that case, you need to set the `EXTERNAL_URL` environment variable to your Nabu Casa remote URL for things like OAuth2 credentials to work properly (setting the right redirect URLs).\n\n### Manual external URL\nIf you are using a manual external URL, Ingress traffic is not relayed via this in a safe manner. In that case, you need to expose port `5678` of the container to a certain port (for instance, `5678`) on Home Assistant, under the \"Network\" section of the configuration tab of the addon.\n\n### Webhooks, triggers and n8n API\nWebhooks, triggers and the n8n API can't go via an Ingress, since having Home Assistant authentication on top of it would break the webhook (they need to be publically accessible and unauthenticated). \n\nFor this reason, the addon exposes all webhook or API traffic on port `8081`.\n\nFor the n8n API, webhooks and some webhook-based triggers to work properly, you need to open up a tunnel for port `8081` to the internet via the [Cloudflared addon](https://github.com/brenner-tobias/addon-cloudflared) or something similar. \n\nWhen done, set the `WEBHOOK_URL` environment variable to the URL of the tunnel.\n\n### Bypassing Home Assistant Ingress entirely (not recommended)\nIf you want to, you can expose n8n without requiring to go through the Ingress. This is done in the \"ports\" section of the \"configuration\" tab of the addon, for port `5678`. Note that you need to enable \"hidden port bindings\" for that port to show up. It is not exposed by default.\n\n# How to use it?\nJust start the addon and head to the addon's web UI.\n\n## Useful ressources\n\n### n8n documentation\n<https://docs.n8n.io>\n<https://docs.n8n.io/getting-started/tutorials.html>\n\n### Community public workflows\n<https://n8n.io/workflows>\n\n### Available integrations\n<https://n8n.io/integrations>\n\n## License\nThis addon is published under the Apache 2 license. Original author of the addon's bundled software is n8n.\n\n# Troubleshooting\nGot questions?\n\nYou can open an issue on GitHub.\n\nRepository: <https://github.com/Rbillon59/hass-n8n>\n\n## `401: Unauthorized` in popup-window when trying to set up OAuth-based credential\nThis can happen depending on which browser you are using. To work around it, copy the URL of the popup window and paste it into a new tab in the main window. Then the authorization will complete.\n",
+        "advanced": false,
+        "stage": "stable",
+        "repository": "21f64f9f",
+        "version_latest": "4.2.6",
+        "protected": true,
+        "rating": 7,
+        "boot_config": "auto",
+        "boot": "auto",
+        "options": {
+            "timezone": "Europe/Berlin",
+            "env_vars_list": [
+                "WEBHOOK_URL: https://webhooks.redacted.example.com/",
+                "EXTERNAL_URL: https://external.redacted.example.com"
+            ],
+            "cmd_line_args": ""
+        },
+        "schema": [
+            {
+                "name": "timezone",
+                "required": true,
+                "type": "string"
+            },
+            {
+                "name": "env_vars_list",
+                "multiple": true,
+                "required": true,
+                "type": "string"
+            },
+            {
+                "name": "cmd_line_args",
+                "optional": true,
+                "type": "string"
+            }
+        ],
+        "arch": [
+            "aarch64",
+            "amd64"
+        ],
+        "machine": [],
+        "homeassistant": null,
+        "url": "https://github.com/Rbillon59/hass-n8n",
+        "detached": false,
+        "available": true,
+        "build": false,
+        "network": {
+            "5678/tcp": null,
+            "8081/tcp": 8081
+        },
+        "network_description": {
+            "5678/tcp": "The port for all n8n traffic. Normally not exposed, as Home Assistant Ingress is more secure and is recommended. You may expose this port if you want to bypass the Ingress (not recommended for security reasons). See the documentation for more information.",
+            "8081/tcp": "The port for n8n webhook and API-related traffic. Use this to allow running under Home Assistant Ingress while still allowing certain public communication channels to go through and function. See the documentation for more information."
+        },
+        "host_network": false,
+        "host_pid": false,
+        "host_ipc": false,
+        "host_uts": false,
+        "host_dbus": false,
+        "privileged": [],
+        "full_access": false,
+        "apparmor": "default",
+        "icon": true,
+        "logo": true,
+        "changelog": true,
+        "documentation": false,
+        "stdin": false,
+        "hassio_api": true,
+        "hassio_role": "default",
+        "auth_api": false,
+        "homeassistant_api": true,
+        "gpio": false,
+        "usb": false,
+        "uart": false,
+        "kernel_modules": false,
+        "devicetree": false,
+        "udev": false,
+        "docker_api": false,
+        "video": false,
+        "audio": false,
+        "startup": "application",
+        "services": [],
+        "discovery": [],
+        "translations": {},
+        "ingress": true,
+        "signed": false,
+        "state": "started",
+        "webui": "http://[HOST]:5690/",
+        "ingress_entry": "/api/hassio_ingress/redacted",
+        "ingress_url": "/api/hassio_ingress/redacted/",
+        "ingress_port": 5690,
+        "ingress_panel": true,
+        "audio_input": null,
+        "audio_output": null,
+        "auto_update": true,
+        "ip_address": "172.30.33.1",
+        "version": "4.2.6",
+        "update_available": false,
+        "watchdog": true,
+        "devices": [],
+        "system_managed": false,
+        "system_managed_config_entry": null
+    }
+}

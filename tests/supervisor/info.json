@@ -1,0 +1,38 @@
+{
+    "result": "ok",
+    "data": {
+        "supervisor": "2025.07.2",
+        "homeassistant": "2025.7.4",
+        "hassos": "16.0",
+        "docker": "28.3.0",
+        "hostname": "localhost",
+        "operating_system": "Home Assistant OS 16.0",
+        "features": [
+            "reboot",
+            "shutdown",
+            "services",
+            "network",
+            "hostname",
+            "timedate",
+            "os_agent",
+            "haos",
+            "resolved",
+            "journal",
+            "disk",
+            "mount"
+        ],
+        "machine": "raspberrypi5-64",
+        "machine_id": "ad61fbd34c7f468e9b5a56701ceda47a",
+        "arch": "aarch64",
+        "state": "running",
+        "supported_arch": [
+            "aarch64",
+            "armv7",
+            "armhf"
+        ],
+        "supported": true,
+        "channel": "stable",
+        "logging": "info",
+        "timezone": "Europe/Copenhagen"
+    }
+}
