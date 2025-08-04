@@ -8,6 +8,7 @@
     "test:e2e:debug": "playwright test --debug",
     "test:headed": "playwright test --headed",
     "test:with-docker": "./run-tests.sh",
+    "start-addon": "./start-addon.sh",
     "show-report": "playwright show-report"
   },
   "devDependencies": {

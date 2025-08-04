@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Playwright test runner with Docker container management
-# This script handles starting/stopping the Docker container for testing
+# Start the hass-n8n addon container for testing
+# This script handles building and starting the Docker container
 
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 
-echo "🐳 Starting Docker container for testing..."
+echo "🐳 Starting hass-n8n addon container..."
 
 # Function to cleanup Docker container
 cleanup() {
@@ -37,7 +37,6 @@ INFO=$(cat "$SCRIPT_DIR/supervisor/info.json")
 echo "🔨 Building Docker image..."
 docker build \
     --build-arg NGINX_ALLOWED_IP=all \
-    --build-arg N8N_VERSION=1.100.1 \
     --target hass-n8n-end-to-end-test \
     -t hass-n8n-test \
     "$PROJECT_ROOT"
@@ -79,18 +78,15 @@ if [ $attempt -eq $max_attempts ]; then
     exit 1
 fi
 
-# Run the Playwright tests
-echo "🎭 Running Playwright tests..."
-cd "$SCRIPT_DIR"
+echo "🎯 Addon container is running and ready for testing!"
+echo "   - Main interface: http://localhost:5000"
+echo "   - n8n interface: http://localhost:5678"
+echo "   - n8n webhook: http://localhost:5690"
+echo "   - nginx: http://localhost:8081"
+echo ""
+echo "Press Ctrl+C to stop the container."
 
-if [ "$1" = "--ui" ]; then
-    npx playwright test --ui
-elif [ "$1" = "--debug" ]; then
-    npx playwright test --debug
-elif [ "$1" = "--headed" ]; then
-    npx playwright test --headed
-else
-    npx playwright test
-fi
-
-echo "✅ Tests completed!"
+# Keep the script running until interrupted
+while true; do
+    sleep 1
+done

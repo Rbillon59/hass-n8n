@@ -19,11 +19,10 @@ The tests are already configured with all necessary dependencies:
 
 ### Option 1: Manual Container Management (Recommended)
 
-1. **Build and start the Docker container manually:**
+1. **Start the addon container:**
    ```bash
-   # From the project root
-   docker build -t hass-n8n-test .
-   docker run --rm -d --name hass-n8n-test -p 5000:5000 -p 5678:5678 -p 5690:5690 -p 8081:8081 hass-n8n-test
+   cd tests
+   ./start-addon.sh
    ```
 
 2. **Run the tests in a separate terminal:**
@@ -54,6 +53,8 @@ Available npm scripts:
 npm run test:e2e           # Run all tests
 npm run test:e2e:ui        # Run with Playwright UI
 npm run test:e2e:debug     # Run in debug mode
+npm run test:with-docker   # Run tests with automatic Docker management
+npm run start-addon        # Start the addon container only
 ```
 
 ## What the Tests Check

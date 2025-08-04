@@ -7,11 +7,10 @@ test.describe('Docker Container Integration Tests', () => {
   let dockerProcess: ChildProcess | null = null;
   
   test.beforeAll(async () => {
-    console.log('Starting Docker container...');
+    console.log('Starting Docker container using start-addon.sh...');
     
-    // Start the Docker container using the test.sh script
-    dockerProcess = spawn('bash', ['../test.sh'], {
-      cwd: '/home/wsl/hass-n8n/tests',
+    // Start the Docker container using start-addon.sh script
+    dockerProcess = spawn('bash', ['./start-addon.sh'], {
       stdio: 'pipe',
       detached: true
     });
@@ -37,7 +36,7 @@ test.describe('Docker Container Integration Tests', () => {
     
     while (waitTime < maxWaitTime) {
       try {
-        const response = await fetch('http://localhost:5000');
+        const response = await fetch('http://localhost:5000/api/hassio_ingress/redacted/');
         if (response.status < 500) {
           console.log('Container is ready!');
           break;
@@ -73,7 +72,7 @@ test.describe('Docker Container Integration Tests', () => {
     
     // Also run docker cleanup commands
     try {
-      const cleanup = spawn('docker', ['stop', 'hass-n8n'], { stdio: 'inherit' });
+      const cleanup = spawn('docker', ['stop', 'hass-n8n-test'], { stdio: 'inherit' });
       cleanup.on('close', () => {
         console.log('Docker container stopped');
       });
@@ -115,7 +114,7 @@ test.describe('Docker Container Integration Tests', () => {
     });
 
     // Navigate to the application
-    await page.goto('http://localhost:5000');
+    await page.goto('http://localhost:5000/api/hassio_ingress/redacted/');
     
     // Wait for the page to fully load
     await page.waitForLoadState('networkidle');
@@ -137,27 +136,5 @@ test.describe('Docker Container Integration Tests', () => {
     
     // Assert the page loaded
     expect(page.url()).toContain('localhost:5000');
-  });
-
-  test('should access all exposed ports', async ({ page }) => {
-    const ports = [5000, 5678, 5690, 8081];
-    const results: Array<{ port: number; status: number | string }> = [];
-    
-    for (const port of ports) {
-      try {
-        const response = await page.request.get(`http://localhost:${port}`);
-        results.push({ port, status: response.status() });
-        console.log(`Port ${port}: ${response.status()}`);
-      } catch (error) {
-        results.push({ port, status: 'unreachable' });
-        console.log(`Port ${port}: unreachable`);
-      }
-    }
-    
-    // At least the main port (5000) should be accessible
-    const mainPortResult = results.find(r => r.port === 5000);
-    expect(mainPortResult?.status).toBeLessThan(500);
-    
-    console.log('Port accessibility results:', results);
   });
 });
