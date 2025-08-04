@@ -1,4 +1,4 @@
-FROM n8nio/n8n:1.105.1
+FROM n8nio/n8n:1.105.1 AS base
 
 ARG NGINX_ALLOWED_IP=172.30.32.2
 ENV NGINX_ALLOWED_IP=${NGINX_ALLOWED_IP}
@@ -39,3 +39,12 @@ RUN chmod +x /app/n8n-entrypoint.sh \
     && chmod +x /app/n8n-exports.sh
 
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+
+
+# we define this stage to simulate how Home Assistant's ingress works locally.
+FROM base AS hass-n8n-end-to-end-test
+COPY tests/nginx.tests.conf /etc/nginx/hass-n8n-tests.conf
+
+
+# the last stage is the final image used by Home Assistant.
+FROM base AS final
