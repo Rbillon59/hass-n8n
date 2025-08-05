@@ -7,7 +7,7 @@ on:
     types: [opened, reopened, synchronize]
 
 jobs:
-  auto-merge:
+  build:
     runs-on: ubuntu-latest
 
     steps:      
