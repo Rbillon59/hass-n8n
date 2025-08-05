@@ -19,7 +19,10 @@ Or, follow these steps to get the add-on installed on your system:
 # Configuration
 ```yaml
 timezone: Europe/Berlin
-env_vars_list: []
+env_vars_list:
+  - "WEBHOOK_URL: <value here>"
+  - "EXTERNAL_URL: <value here>"
+  - "OTHER_ENVIRONMENT_VARIABLE_OF_YOUR_CHOICE: <value here>"
 cmd_line_args: ""
 ```
 
