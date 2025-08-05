@@ -1,14 +1,13 @@
-name: Auto-merge Dependabot PRs
+name: Build pull request
 
 permissions: write-all
 
 on:
   pull_request:
-    types: [opened, reopened]
+    types: [opened, reopened, synchronize]
 
 jobs:
-  auto-merge:
-    if: github.actor == 'dependabot[bot]'
+  build:
     runs-on: ubuntu-latest
 
     steps:      
@@ -16,8 +15,16 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - name: Run tests
+        run: |
+          npm i
+          npx playwright install
+          npm run test:e2e
+        working-directory: tests
           
       - name: Enable auto-merge using GitHub CLI
+        if: github.actor == 'dependabot[bot]'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
