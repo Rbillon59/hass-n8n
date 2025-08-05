@@ -19,6 +19,7 @@ jobs:
       - name: Run tests
         run: |
           npm i
+          npx playwright install
           npm run test:e2e
         working-directory: tests
           
