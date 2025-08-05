@@ -17,7 +17,9 @@ jobs:
           fetch-depth: 0
 
       - name: Run tests
-        run: npm run test:e2e
+        run: |
+          npm i
+          npm run test:e2e
         working-directory: tests
           
       - name: Enable auto-merge using GitHub CLI
