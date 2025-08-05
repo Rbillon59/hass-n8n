@@ -47,14 +47,12 @@ docker run \
     --rm \
     --detach \
     --name hass-n8n-test \
-    -p 5690:5690 \
-    -p 5678:5678 \
-    -p 8081:8081 \
     -p 5000:5000 \
     -e ADDON_INFO_FALLBACK="$ADDON_INFO" \
     -e CONFIG_FALLBACK="$CONFIG" \
     -e INFO_FALLBACK="$INFO" \
     -e N8N_PROTOCOL="http" \
+    -e LOCAL_N8N_PORT="5000" \
     hass-n8n-test
 
 # Wait for the container to be ready
@@ -79,11 +77,6 @@ if [ $attempt -eq $max_attempts ]; then
 fi
 
 echo "🎯 Addon container is running and ready for testing!"
-echo "   - Main interface: http://localhost:5000"
-echo "   - n8n interface: http://localhost:5678"
-echo "   - n8n webhook: http://localhost:5690"
-echo "   - nginx: http://localhost:8081"
-echo ""
 echo "Press Ctrl+C to stop the container."
 
 # Keep the script running until interrupted
