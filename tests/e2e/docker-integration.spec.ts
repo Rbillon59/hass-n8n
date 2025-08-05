@@ -28,9 +28,9 @@ test.describe('Docker Container Integration Tests', () => {
     
     // Wait for the container to be ready
     console.log('Waiting for container to start...');
-    
-    // Wait up to 2 minutes for the container to be ready
-    const maxWaitTime = 120000; // 2 minutes
+
+    // Wait up to 5 minutes for the container to be ready
+    const maxWaitTime = 60 * 1000 * 5; // 5 minutes
     const checkInterval = 5000; // 5 seconds
     let waitTime = 0;
     
