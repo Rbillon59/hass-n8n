@@ -1,3 +1,15 @@
+# Release 4.2.9
+
+## What's Changed
+* chore: update changelog for release 4.2.8 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/365
+* chore(deps): bump n8nio/n8n from 1.105.1 to 1.105.2 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/367
+* docs: clarify how to set environment variables better by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/368
+* tests: add end-to-end tests by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/366
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.8...4.2.9
+
+
 # Release 4.2.8
 
 ## What's Changed
