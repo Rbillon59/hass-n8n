@@ -1,3 +1,13 @@
+# Release 4.2.11
+
+## What's Changed
+* chore: update changelog for release 4.2.10 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/372
+* chore(deps): bump n8nio/n8n from 1.105.3 to 1.105.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/373
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.10...4.2.11
+
+
 # Release 4.2.10
 
 ## What's Changed
