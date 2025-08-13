@@ -22,6 +22,10 @@ timezone: Europe/Berlin
 env_vars_list:
   - "WEBHOOK_URL: <value here>"
   - "EXTERNAL_URL: <value here>"
+  # Workflow organization (optional)
+  - "N8N_SOURCE_CONTROL_ENABLED: true"
+  - "N8N_VERSION_CONTROL_ENABLED: true"
+  - "N8N_WORKFLOWS_FOLDER: /data/workflows"
   - "OTHER_ENVIRONMENT_VARIABLE_OF_YOUR_CHOICE: <value here>"
 cmd_line_args: ""
 ```
@@ -32,6 +36,11 @@ List of the n8n environment variables. You can add as many environment variables
 `SOME_ENVIRONMENT_VARIABLE: some-value` (the regular expression is `^[A-Z_0-9]+: .*$` )
 
 All the available environment variables are available here : <https://docs.n8n.io/hosting/environment-variables/environment-variables/>
+
+### Common workflow organization variables:
+- `N8N_SOURCE_CONTROL_ENABLED: true` - Enables git-based source control for workflows
+- `N8N_VERSION_CONTROL_ENABLED: true` - Enables version control features
+- `N8N_WORKFLOWS_FOLDER: /data/workflows` - Directory to store workflow files
 
 ## Option: `cmd_line_args` (optional)
 The command line to start n8n. If you want to use a custom command line, you can use this variable.
@@ -70,6 +79,58 @@ If you want to, you can expose n8n without requiring to go through the Ingress. 
 
 # How to use it?
 Just start the addon and head to the addon's web UI.
+
+## Organizing workflows into separate files
+
+n8n supports organizing your automations/workflows into separate files using its built-in source control features. This allows you to:
+
+- Store workflows as JSON files in a git repository
+- Version control your workflows
+- Collaborate on workflow development
+- Backup and restore workflows easily
+- Organize workflows by functionality or project
+
+### Enabling workflow file organization
+
+To enable workflow file organization, add the following environment variables to your `env_vars_list` configuration:
+
+```yaml
+env_vars_list:
+  - "N8N_SOURCE_CONTROL_ENABLED: true"
+  - "N8N_VERSION_CONTROL_ENABLED: true"
+  - "N8N_WORKFLOWS_FOLDER: /data/workflows"
+```
+
+### Setting up a git repository for workflows
+
+1. **Enable source control**: Set `N8N_SOURCE_CONTROL_ENABLED: true` in your configuration
+2. **Configure git repository**: In the n8n interface, go to Settings → Source control
+3. **Connect your repository**: Add your git repository URL and credentials
+4. **Initialize workflow sync**: n8n will create individual JSON files for each workflow
+
+### Workflow file structure
+
+When enabled, n8n will organize your workflows like this:
+
+```
+/data/workflows/
+├── workflow-1-contact-management.json
+├── workflow-2-order-processing.json
+├── workflow-3-notification-system.json
+└── credentials/
+    ├── credential-1.json
+    └── credential-2.json
+```
+
+### Best practices for workflow organization
+
+- **Use descriptive names**: Name your workflows clearly to understand their purpose
+- **Group related workflows**: Use consistent naming conventions (e.g., `project-name-workflow-purpose.json`)
+- **Version control**: Commit workflow changes with meaningful commit messages
+- **Backup regularly**: Your git repository serves as a backup of all workflows
+- **Test changes**: Use separate environments for development and production workflows
+
+For a complete example with sample configurations, see [examples/workflow-organization-example.md](examples/workflow-organization-example.md).
 
 ## Useful ressources
 
