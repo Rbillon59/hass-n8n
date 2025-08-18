@@ -1,3 +1,16 @@
+# Release 4.2.12
+
+## What's Changed
+* chore: update changelog for release 4.2.11 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/374
+* chore(deps): bump n8nio/n8n from 1.105.4 to 1.106.3 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/376
+* Add comprehensive GitHub Copilot instructions for hass-n8n development workflow by @Copilot in https://github.com/Rbillon59/hass-n8n/pull/380
+
+## New Contributors
+* @Copilot made their first contribution in https://github.com/Rbillon59/hass-n8n/pull/380
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.11...4.2.12
+
+
 # Release 4.2.11
 
 ## What's Changed
