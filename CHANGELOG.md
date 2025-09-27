@@ -1,3 +1,17 @@
+# Release 4.2.18
+
+## What's Changed
+* chore(deps): bump n8nio/n8n from 1.110.1 to 1.111.0 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/396
+* chore(deps): bump n8nio/n8n from 1.111.0 to 1.111.1 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/397
+* chore(deps): bump n8nio/n8n from 1.111.1 to 1.112.3 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/398
+* chore(deps): bump n8nio/n8n from 1.112.3 to 1.112.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/399
+* chore(deps): bump n8nio/n8n from 1.112.4 to 1.112.5 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/400
+* chore(deps): bump n8nio/n8n from 1.112.5 to 1.112.6 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/403
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.17...4.2.18
+
+
 # Release 4.2.15
 
 ## What's Changed
