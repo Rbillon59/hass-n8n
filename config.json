@@ -1,6 +1,6 @@
 {
   "name": "n8n",
-  "version": "4.2.15",
+  "version": "4.2.19",
   "slug": "hass-n8n",
   "description": "Self host your n8n instance",
   "url": "https://github.com/Rbillon59/hass-n8n",

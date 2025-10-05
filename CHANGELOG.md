@@ -1,3 +1,12 @@
+# Release 4.2.19
+
+## What's Changed
+* chore(deps): bump n8nio/n8n from 1.112.6 to 1.113.3 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/404
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.18...4.2.19
+
+
 # Release 4.2.15
 
 ## What's Changed
