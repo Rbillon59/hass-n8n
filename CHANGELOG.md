@@ -1,3 +1,16 @@
+# Release 4.2.21
+
+## What's Changed
+* fix: update readme after markdown linting and force release by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/411
+* chore(deps): bump n8nio/n8n from 1.116.2 to 1.117.2 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/412
+* chore(deps): bump n8nio/n8n from 1.117.2 to 1.117.3 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/413
+* chore(deps): bump n8nio/n8n from 1.117.3 to 1.118.1 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/414
+* chore(deps): bump n8nio/n8n from 1.118.1 to 1.118.2 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/415
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.20...4.2.21
+
+
 # Release 4.2.20
 
 ## What's Changed
