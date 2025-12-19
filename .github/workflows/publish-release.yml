@@ -66,6 +66,10 @@ jobs:
             {
               docker_name: arm64,
               hass_name: aarch64
+            },
+            {
+              docker_name: "386",
+              hass_name: x86
             }
           ]
 
