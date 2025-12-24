@@ -1,3 +1,23 @@
+# Release 4.2.23
+
+## What's Changed
+* chore: update changelog for release 4.2.22 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/423
+* chore(deps): bump n8nio/n8n from 1.119.2 to 1.120.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/424
+* chore(deps): bump n8nio/n8n from 1.120.4 to 1.121.2 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/427
+* chore(deps): bump n8nio/n8n from 1.121.2 to 1.121.3 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/428
+* chore(deps): bump n8nio/n8n from 1.121.3 to 1.122.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/429
+* chore(deps): bump n8nio/n8n from 1.122.4 to 1.122.5 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/430
+* chore(deps): bump n8nio/n8n from 1.122.5 to 1.123.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/432
+* chore(deps): bump n8nio/n8n from 1.123.4 to 1.123.5 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/434
+* chore(deps): bump n8nio/n8n from 1.123.5 to 2.0.2 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/435
+* chore(deps): bump n8nio/n8n from 2.0.2 to 2.0.3 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/436
+* feat: add x86 architecture support to publish-release workflow by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/437
+* chore(deps): bump n8nio/n8n from 2.0.3 to 2.1.3 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/439
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.22...4.2.23
+
+
 # Release 4.2.22
 
 ## What's Changed
