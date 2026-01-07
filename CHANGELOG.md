@@ -1,3 +1,17 @@
+# Release 4.2.24
+
+## What's Changed
+* chore: update changelog for release 4.2.23 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/441
+* chore(deps): bump n8nio/n8n from 2.1.4 to 2.1.5 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/442
+* chore(deps): bump n8nio/n8n from 2.1.5 to 2.2.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/447
+* Fix: Make cmd_line_args usable in n8n entrypoint by @eroak in https://github.com/Rbillon59/hass-n8n/pull/444
+
+## New Contributors
+* @eroak made their first contribution in https://github.com/Rbillon59/hass-n8n/pull/444
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.23...4.2.24
+
+
 # Release 4.2.23
 
 ## What's Changed
