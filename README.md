@@ -108,6 +108,27 @@ You can open an issue on GitHub.
 
 Repository: <https://github.com/Rbillon59/hass-n8n>
 
-## `401: Unauthorized` in popup-window when trying to set up OAuth-based credential
+### `401: Unauthorized` in popup-window when trying to set up OAuth-based credential
 
 This can happen depending on which browser you are using. To work around it, copy the URL of the popup window and paste it into a new tab in the main window. Then the authorization will complete.
+
+### I forgot my admin password. How can I reset it?
+
+If you forget your admin password, you can reset n8n’s user management using the n8n CLI.  
+This operation restores user management to its pre-setup state **and removes all existing user accounts**. Use this only if you can no longer access the admin account.
+
+Official n8n documentation: https://docs.n8n.io/hosting/cli-commands/#user-management
+
+#### Steps
+
+1. In the **Configuration** tab of the add-on, set the following value in the `cmd_line_args` field:
+   ```
+   user-management:reset
+   ```
+2. Click **Save**, restart the add-on, and wait until the following message appears in the **Log** tab:
+   ```
+   Successfully reset the database to default user state.
+   ```
+3. Once the reset is complete, go back to the **Configuration** tab and clear the `cmd_line_args` field.
+4. Click **Save** and restart the add-on again.
+5. You’re done! You will be redirected to the page allowing you to create a new admin user.
