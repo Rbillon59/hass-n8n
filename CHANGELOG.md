@@ -1,3 +1,28 @@
+# Release 4.2.25
+
+## What's Changed
+* chore: update changelog for release 4.2.24 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/448
+* docs: add troubleshooting steps to reset n8n admin password by @eroak in https://github.com/Rbillon59/hass-n8n/pull/449
+* chore(deps): bump n8nio/n8n from 2.2.4 to 2.2.5 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/450
+* chore(deps): bump n8nio/n8n from 2.2.5 to 2.2.6 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/451
+* chore(deps): bump n8nio/n8n from 2.2.6 to 2.3.2 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/453
+* chore(deps): bump n8nio/n8n from 2.3.2 to 2.3.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/454
+* chore(deps): bump n8nio/n8n from 2.3.4 to 2.3.5 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/455
+* chore(deps): bump n8nio/n8n from 2.3.5 to 2.3.6 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/456
+* chore(deps): bump n8nio/n8n from 2.3.6 to 2.4.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/457
+* chore(deps): bump n8nio/n8n from 2.4.4 to 2.4.5 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/458
+* chore(deps): bump n8nio/n8n from 2.4.5 to 2.4.6 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/459
+* chore(deps): bump n8nio/n8n from 2.4.6 to 2.4.8 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/460
+* chore(deps): bump n8nio/n8n from 2.4.8 to 2.6.3 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/461
+* chore(deps): bump n8nio/n8n from 2.6.3 to 2.6.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/462
+* chore(deps): bump n8nio/n8n from 2.6.4 to 2.7.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/463
+* chore(deps): bump n8nio/n8n from 2.7.4 to 2.7.5 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/464
+* chore(deps): bump n8nio/n8n from 2.7.5 to 2.8.3 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/465
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.24...4.2.25
+
+
 # Release 4.2.24
 
 ## What's Changed
