@@ -1,3 +1,13 @@
+# Release 4.2.26
+
+## What's Changed
+* chore: update changelog for release 4.2.25 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/466
+* chore(deps): bump n8nio/n8n from 2.8.3 to 2.9.2 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/470
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.25...4.2.26
+
+
 # Release 4.2.25
 
 ## What's Changed
