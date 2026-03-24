@@ -83,6 +83,11 @@ test.describe('Docker Container Integration Tests', () => {
     await sleep(5000); // Wait for cleanup
   });
 
+  test('should return 200 on health endpoint via ingress path', async ({ request }) => {
+    const response = await request.get('http://localhost:5000/api/hassio_ingress/redacted/healthz');
+    expect(response.status()).toBe(200);
+  });
+
   test('should load main application without network failures', async ({ page }) => {
     const networkRequests: Array<{ url: string; status: number; method: string }> = [];
     const failedRequests: Array<{ url: string; status: number; error?: string }> = [];
