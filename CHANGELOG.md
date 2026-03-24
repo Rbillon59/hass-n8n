@@ -1,3 +1,22 @@
+# Release 4.2.27
+
+## What's Changed
+* chore: update changelog for release 4.2.26 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/471
+* chore(deps): bump n8nio/n8n from 2.9.2 to 2.9.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/472
+* chore(deps): bump n8nio/n8n from 2.9.4 to 2.10.2 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/473
+* chore(deps): bump n8nio/n8n from 2.10.2 to 2.10.3 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/474
+* chore(deps): bump n8nio/n8n from 2.10.3 to 2.10.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/475
+* chore(deps): bump n8nio/n8n from 2.10.4 to 2.11.2 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/476
+* chore(deps): bump n8nio/n8n from 2.11.2 to 2.11.3 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/477
+* chore(deps): bump n8nio/n8n from 2.11.3 to 2.11.4 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/478
+* chore(deps): bump n8nio/n8n from 2.11.4 to 2.12.2 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/479
+* chore(deps): bump n8nio/n8n from 2.12.2 to 2.12.3 by @dependabot[bot] in https://github.com/Rbillon59/hass-n8n/pull/480
+* fix: auto-configure N8N_ENDPOINT_HEALTH to prevent constant "offline" status via HA ingress by @Copilot in https://github.com/Rbillon59/hass-n8n/pull/481
+
+
+**Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.26...4.2.27
+
+
 # Release 4.2.26
 
 ## What's Changed
