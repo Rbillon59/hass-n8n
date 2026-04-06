@@ -88,6 +88,46 @@ test.describe('Docker Container Integration Tests', () => {
     expect(response.status()).toBe(200);
   });
 
+  test('should return valid JSON body from healthz endpoint', async ({ request }) => {
+    const response = await request.get('http://localhost:5000/api/hassio_ingress/redacted/healthz');
+    expect(response.status()).toBe(200);
+    const contentType = response.headers()['content-type'];
+    expect(contentType).toContain('application/json');
+    const body = await response.json();
+    expect(body).toHaveProperty('status');
+    expect(body.status).toBe('ok');
+  });
+
+  test('should respond to HEAD requests on healthz endpoint', async ({ request }) => {
+    const response = await request.head('http://localhost:5000/api/hassio_ingress/redacted/healthz');
+    expect(response.status()).toBe(200);
+  });
+
+  test('should respond consistently to repeated healthz requests without failures', async ({ request }) => {
+    const numRequests = 5;
+    for (let i = 0; i < numRequests; i++) {
+      const response = await request.get('http://localhost:5000/api/hassio_ingress/redacted/healthz');
+      expect(response.status()).toBe(200);
+    }
+  });
+
+  test('should not display connection error in the n8n UI after healthz is polled', async ({ page }) => {
+    await page.goto('http://localhost:5000/api/hassio_ingress/redacted/');
+    await page.waitForLoadState('networkidle');
+
+    // Poll the health endpoint a few times, the same way n8n does internally
+    for (let i = 0; i < 3; i++) {
+      const res = await fetch('http://localhost:5000/api/hassio_ingress/redacted/healthz');
+      expect(res.status).toBe(200);
+      await sleep(2000);
+    }
+
+    // After health checks, the UI should not show an offline or connection error message
+    const bodyText = await page.locator('body').innerText();
+    expect(bodyText.toLowerCase()).not.toContain('no connection');
+    expect(bodyText.toLowerCase()).not.toContain('lost connection');
+  });
+
   test('should load main application without network failures', async ({ page }) => {
     const networkRequests: Array<{ url: string; status: number; method: string }> = [];
     const failedRequests: Array<{ url: string; status: number; error?: string }> = [];
