@@ -117,9 +117,9 @@ test.describe('Docker Container Integration Tests', () => {
 
     // Poll the health endpoint a few times, the same way n8n does internally
     for (let i = 0; i < 3; i++) {
-      const res = await fetch('http://localhost:5000/api/hassio_ingress/redacted/healthz');
-      expect(res.status).toBe(200);
-      await sleep(2000);
+      const res = await page.request.get('http://localhost:5000/api/hassio_ingress/redacted/healthz');
+      expect(res.status()).toBe(200);
+      await page.waitForTimeout(2000);
     }
 
     // After health checks, the UI should not show an offline or connection error message
