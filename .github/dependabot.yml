@@ -4,3 +4,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
+    commit-message:
+      # "fix" prefix so release-please picks up base image bumps
+      # as patch releases (it ignores "chore" commits).
+      prefix: "fix(deps)"

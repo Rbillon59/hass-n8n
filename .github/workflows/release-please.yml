@@ -1,0 +1,33 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - master
+  # Safety net: merges performed with GITHUB_TOKEN (e.g. dependabot auto-merge)
+  # do not emit push events for workflows, so we also run on a daily schedule.
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+# Push and schedule triggers can overlap; never run two release-please
+# instances at the same time.
+concurrency:
+  group: release-please
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        with:
+          # PAT instead of GITHUB_TOKEN so that:
+          # - the e2e test workflow runs on the release PR
+          # - the published release triggers publish-release.yml
+          token: ${{ secrets.CR_PAT }}

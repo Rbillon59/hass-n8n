@@ -1,6 +1,8 @@
 name: Build pull request
 
-permissions: write-all
+permissions:
+  contents: write
+  pull-requests: write
 
 on:
   pull_request:
