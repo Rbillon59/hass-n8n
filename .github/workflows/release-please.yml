@@ -26,8 +26,19 @@ jobs:
       pull-requests: write
     steps:
       - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        id: release
         with:
           # PAT instead of GITHUB_TOKEN so that:
           # - the e2e test workflow runs on the release PR
           # - the published release triggers publish-release.yml
           token: ${{ secrets.CR_PAT }}
+
+      # Zero-touch releases: enable auto-merge on the release PR so it merges
+      # on its own once the e2e checks pass. Merging cuts the tag and publishes
+      # the release, which triggers publish-release.yml.
+      - name: Enable auto-merge on the release PR
+        if: ${{ steps.release.outputs.prs_created == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.CR_PAT }}
+          PR_NUMBER: ${{ fromJSON(steps.release.outputs.pr).number }}
+        run: gh pr merge "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --auto --squash
