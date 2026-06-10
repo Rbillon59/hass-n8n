@@ -1,4 +1,13 @@
-# Release 4.2.27
+# Changelog
+
+## [4.2.29](https://github.com/Rbillon59/hass-n8n/compare/4.2.28...4.2.29) (2026-06-10)
+
+
+### Bug Fixes
+
+* **deps:** bump n8nio/n8n from 2.25.6 to 2.25.7 ([#527](https://github.com/Rbillon59/hass-n8n/issues/527)) ([fc9b65f](https://github.com/Rbillon59/hass-n8n/commit/fc9b65ff9c7144a670b1d74325ce7dc6f289810e))
+
+## Release 4.2.27
 
 ## What's Changed
 * chore: update changelog for release 4.2.26 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/471
@@ -17,7 +26,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.26...4.2.27
 
 
-# Release 4.2.26
+## Release 4.2.26
 
 ## What's Changed
 * chore: update changelog for release 4.2.25 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/466
@@ -27,7 +36,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.25...4.2.26
 
 
-# Release 4.2.25
+## Release 4.2.25
 
 ## What's Changed
 * chore: update changelog for release 4.2.24 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/448
@@ -52,7 +61,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.24...4.2.25
 
 
-# Release 4.2.24
+## Release 4.2.24
 
 ## What's Changed
 * chore: update changelog for release 4.2.23 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/441
@@ -66,7 +75,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.23...4.2.24
 
 
-# Release 4.2.23
+## Release 4.2.23
 
 ## What's Changed
 * chore: update changelog for release 4.2.22 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/423
@@ -86,7 +95,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.22...4.2.23
 
 
-# Release 4.2.22
+## Release 4.2.22
 
 ## What's Changed
 * chore: update changelog for release 4.2.21 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/420
@@ -97,7 +106,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.21...4.2.22
 
 
-# Release 4.2.21
+## Release 4.2.21
 
 ## What's Changed
 * fix: update readme after markdown linting and force release by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/411
@@ -110,7 +119,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.20...4.2.21
 
 
-# Release 4.2.20
+## Release 4.2.20
 
 ## What's Changed
 
@@ -122,7 +131,7 @@
 
 **Full Changelog**: <https://github.com/Rbillon59/hass-n8n/compare/4.2.19...4.2.20>
 
-# Release 4.2.19
+## Release 4.2.19
 
 ## What's Changed
 
@@ -130,7 +139,7 @@
 
 **Full Changelog**: <https://github.com/Rbillon59/hass-n8n/compare/4.2.18...4.2.19>
 
-# Release 4.2.18
+## Release 4.2.18
 
 ## What's Changed
 * chore(deps): bump n8nio/n8n from 1.110.1 to 1.111.0 by @dependabot[bot] in <https://github.com/Rbillon59/hass-n8n/pull/396>
@@ -142,14 +151,14 @@
 
 **Full Changelog**: <https://github.com/Rbillon59/hass-n8n/compare/4.2.17...4.2.18>
 
-# Release 4.2.17
+## Release 4.2.17
 
 ## What's Changed
 * chore(deps): bump n8nio/n8n from 1.109.2 to 1.110.1 by @dependabot[bot] in <https://github.com/Rbillon59/hass-n8n/pull/394>
 
 **Full Changelog**: <https://github.com/Rbillon59/hass-n8n/compare/4.2.16...4.2.17>
 
-# Release 4.2.16
+## Release 4.2.16
 
 ## What's Changed
 * chore: update changelog for release 4.2.15 by @Rbillon59 in <https://github.com/Rbillon59/hass-n8n/pull/387>
@@ -161,7 +170,7 @@
 
 **Full Changelog**: <https://github.com/Rbillon59/hass-n8n/compare/4.2.15...4.2.16>
 
-# Release 4.2.15
+## Release 4.2.15
 
 ## What's Changed
 * chore: update changelog for release 4.2.14 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/385
@@ -171,7 +180,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.14...4.2.15
 
 
-# Release 4.2.14
+## Release 4.2.14
 
 ## What's Changed
 * chore: update changelog for release 4.2.13 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/383
@@ -181,7 +190,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.13...4.2.14
 
 
-# Release 4.2.13
+## Release 4.2.13
 
 ## What's Changed
 * chore: update changelog for release 4.2.12 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/381
@@ -191,7 +200,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.12...4.2.13
 
 
-# Release 4.2.12
+## Release 4.2.12
 
 ## What's Changed
 * chore: update changelog for release 4.2.11 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/374
@@ -204,7 +213,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.11...4.2.12
 
 
-# Release 4.2.11
+## Release 4.2.11
 
 ## What's Changed
 * chore: update changelog for release 4.2.10 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/372
@@ -214,7 +223,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.10...4.2.11
 
 
-# Release 4.2.10
+## Release 4.2.10
 
 ## What's Changed
 * chore: update changelog for release 4.2.9 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/370
@@ -224,7 +233,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.9...4.2.10
 
 
-# Release 4.2.9
+## Release 4.2.9
 
 ## What's Changed
 * chore: update changelog for release 4.2.8 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/365
@@ -236,7 +245,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.8...4.2.9
 
 
-# Release 4.2.8
+## Release 4.2.8
 
 ## What's Changed
 * chore: update changelog for release 4.2.7 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/363
@@ -246,7 +255,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.7...4.2.8
 
 
-# Release 4.2.7
+## Release 4.2.7
 
 ## What's Changed
 * chore: update changelog for release 4.2.6 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/358
@@ -260,7 +269,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.6...4.2.7
 
 
-# Release 4.2.6
+## Release 4.2.6
 
 ## What's Changed
 * chore: update changelog for release 4.2.5 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/356
@@ -270,7 +279,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.5...4.2.6
 
 
-# Release 4.2.5
+## Release 4.2.5
 
 ## What's Changed
 * chore: update changelog for release 4.2.4 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/349
@@ -281,7 +290,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.4...4.2.5
 
 
-# Release 4.2.4
+## Release 4.2.4
 
 ## What's Changed
 * chore: update changelog for release 4.2.3 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/345
@@ -292,7 +301,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.3...4.2.4
 
 
-# Release 4.2.3
+## Release 4.2.3
 
 ## What's Changed
 * chore: update changelog for release 4.2.2 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/341
@@ -303,7 +312,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.2...4.2.3
 
 
-# Release 4.2.2
+## Release 4.2.2
 
 ## What's Changed
 * chore: update changelog for release 4.2.1 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/338
@@ -313,7 +322,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.1...4.2.2
 
 
-# Release 4.2.1
+## Release 4.2.1
 
 ## What's Changed
 * chore: update changelog for release 4.2.0 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/336
@@ -323,7 +332,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.2.0...4.2.1
 
 
-# Release 4.2.0
+## Release 4.2.0
 
 ## What's Changed
 * chore: update changelog for release 4.1.2 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/333
@@ -334,7 +343,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.1.2...4.2.0
 
 
-# Release 4.1.2
+## Release 4.1.2
 
 ## What's Changed
 * chore: update changelog for release 4.1.1 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/330
@@ -346,7 +355,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.1.1...4.1.2
 
 
-# Release 4.1.1
+## Release 4.1.1
 
 ## What's Changed
 * chore: update changelog for release 4.1.0 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/327
@@ -356,7 +365,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.1.0...4.1.1
 
 
-# Release 4.1.0
+## Release 4.1.0
 
 ## What's Changed
 * chore: update changelog for release 4.0.14 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/325
@@ -366,7 +375,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.14...4.1.0
 
 
-# Release 4.0.14
+## Release 4.0.14
 
 ## What's Changed
 * chore: update changelog for release 4.0.13 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/321
@@ -376,7 +385,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.13...4.0.14
 
 
-# Release 4.0.13
+## Release 4.0.13
 
 ## What's Changed
 * chore: update changelog for release 4.0.12 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/319
@@ -386,7 +395,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.12...4.0.13
 
 
-# Release 4.0.12
+## Release 4.0.12
 
 ## What's Changed
 * chore: update changelog for release 4.0.11 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/316
@@ -397,7 +406,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.11...4.0.12
 
 
-# Release 4.0.11
+## Release 4.0.11
 
 ## What's Changed
 * chore: update changelog for release 4.0.10 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/314
@@ -407,7 +416,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.10...4.0.11
 
 
-# Release 4.0.10
+## Release 4.0.10
 
 ## What's Changed
 * chore: update changelog for release 4.0.9 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/312
@@ -417,7 +426,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.9...4.0.10
 
 
-# Release 4.0.9
+## Release 4.0.9
 
 ## What's Changed
 * chore: update changelog for release 4.0.8 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/310
@@ -427,7 +436,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.8...4.0.9
 
 
-# Release 4.0.8
+## Release 4.0.8
 
 ## What's Changed
 * chore: update changelog for release 4.0.7 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/308
@@ -437,7 +446,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.7...4.0.8
 
 
-# Release 4.0.7
+## Release 4.0.7
 
 ## What's Changed
 * chore: update changelog for release 4.0.6 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/306
@@ -447,7 +456,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.6...4.0.7
 
 
-# Release 4.0.6
+## Release 4.0.6
 
 ## What's Changed
 * chore: update changelog for release 4.0.5 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/304
@@ -457,7 +466,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.5...4.0.6
 
 
-# Release 4.0.5
+## Release 4.0.5
 
 ## What's Changed
 * chore: update changelog for release 4.0.4 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/302
@@ -467,7 +476,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.4...4.0.5
 
 
-# Release 4.0.4
+## Release 4.0.4
 
 ## What's Changed
 * chore: update changelog for release 4.0.3 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/300
@@ -477,7 +486,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.3...4.0.4
 
 
-# Release 4.0.3
+## Release 4.0.3
 
 ## What's Changed
 * chore: update changelog for release 4.0.2 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/298
@@ -487,7 +496,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.2...4.0.3
 
 
-# Release 4.0.2
+## Release 4.0.2
 
 ## What's Changed
 * chore: update changelog for release 4.0.1 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/296
@@ -497,7 +506,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.1...4.0.2
 
 
-# Release 4.0.1
+## Release 4.0.1
 
 ## What's Changed
 * chore: update changelog for release 4.0.0 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/294
@@ -507,7 +516,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/4.0.0...4.0.1
 
 
-# Release 4.0.0
+## Release 4.0.0
 
 ## What's Changed
 * chore: update changelog for release 3.4.9 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/290
@@ -519,7 +528,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.9...4.0.0
 
 
-# Release 3.4.9
+## Release 3.4.9
 
 ## What's Changed
 * docs: update changelog manually to resolve temporary issue by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/288
@@ -529,7 +538,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.8...3.4.9
 
 
-# Release 3.4.8
+## Release 3.4.8
 
 ## What's Changed
 * chore: update changelog for release 3.4.7 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/282
@@ -541,7 +550,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.7...3.5.0
 
 
-# Release 3.4.7
+## Release 3.4.7
 
 ## What's Changed
 * chore: update changelog for release 3.4.6 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/280
@@ -551,7 +560,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.6...3.4.7
 
 
-# Release 3.4.6
+## Release 3.4.6
 
 ## What's Changed
 * chore: update changelog for release 3.4.5 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/278
@@ -561,7 +570,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.5...3.4.6
 
 
-# Release 3.4.5
+## Release 3.4.5
 
 ## What's Changed
 * Update CHANGELOG.md by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/276
@@ -571,7 +580,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.4...3.4.5
 
 
-# Release 3.4.4
+## Release 3.4.4
 
 ## What's Changed
 * chore: update changelog for release 3.4.3 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/271
@@ -583,7 +592,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.3...3.4.4
 
 
-# Release 3.4.3
+## Release 3.4.3
 
 ## What's Changed
 * chore: update changelog for release 3.4.2 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/269
@@ -593,7 +602,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.2...3.4.3
 
 
-# Release 3.4.2
+## Release 3.4.2
 
 ## What's Changed
 * chore: update changelog for release 3.4.1 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/267
@@ -603,7 +612,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.1...3.4.2
 
 
-# Release 3.4.1
+## Release 3.4.1
 
 ## What's Changed
 * chore: update changelog for release 3.4.0 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/264
@@ -615,7 +624,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.4.0...3.4.1
 
 
-# Release 3.4.0
+## Release 3.4.0
 
 ## What's Changed
 * chore: update changelog for release 3.3.9 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/262
@@ -625,7 +634,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.9...3.4.0
 
 
-# Release 3.3.9
+## Release 3.3.9
 
 ## What's Changed
 * chore: update changelog for release 3.3.8 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/257
@@ -635,7 +644,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.8...3.3.9
 
 
-# Release 3.3.8
+## Release 3.3.8
 
 ## What's Changed
 * chore: update changelog for release 3.3.7 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/256
@@ -647,7 +656,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.7...3.3.8
 
 
-# Release 3.3.7
+## Release 3.3.7
 
 ## What's Changed
 * chore: update changelog for release 3.3.6 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/250
@@ -657,7 +666,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.6...3.3.7
 
 
-# Release 3.3.6
+## Release 3.3.6
 
 ## What's Changed
 * chore: update changelog for release 3.3.5 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/234
@@ -670,7 +679,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.5...3.3.6
 
 
-# Release 3.3.5
+## Release 3.3.5
 
 ## What's Changed
 * chore: update changelog for release 3.3.4 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/231
@@ -681,7 +690,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.4...3.3.5
 
 
-# Release 3.3.4
+## Release 3.3.4
 
 ## What's Changed
 * chore: update changelog for release 3.3.3 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/224
@@ -695,7 +704,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.3...3.3.4
 
 
-# Release 3.3.3
+## Release 3.3.3
 
 ## What's Changed
 * chore: update changelog for release 3.3.2 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/222
@@ -705,7 +714,7 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.2...3.3.3
 
 
-# Release 3.3.2
+## Release 3.3.2
 
 ## What's Changed
 * chore: update changelog for release 3.3.1 by @Rbillon59 in https://github.com/Rbillon59/hass-n8n/pull/220
@@ -715,12 +724,10 @@
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.1...3.3.2
 
 
-# Release 3.3.1
+## Release 3.3.1
 
 ## What's Changed
 * fix: broken changelog generation by @ffMathy in https://github.com/Rbillon59/hass-n8n/pull/217
 
 
 **Full Changelog**: https://github.com/Rbillon59/hass-n8n/compare/3.3.0...3.3.1
-
-
