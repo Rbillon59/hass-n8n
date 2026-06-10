@@ -1,6 +1,8 @@
 name: Publish release
 
-permissions: write-all
+permissions:
+  contents: read
+  packages: write
 
 on:
   release:
@@ -8,56 +10,11 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Release tag to (re)build images for (e.g. v1.2.3)'
+        description: 'Release tag to (re)build images for (e.g. 4.2.29, no v prefix)'
         required: true
         type: string
 
 jobs:
-  update_changelog:
-    if: github.event_name == 'release'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Update CHANGELOG.md and config.json
-        env:
-          GITHUB_TOKEN: ${{ secrets.CR_PAT }}
-          GH_TOKEN: ${{ secrets.CR_PAT }}
-        run: |
-          # Extract tag and release notes from the event payload
-          TAG=$(jq -r '.release.tag_name' "$GITHUB_EVENT_PATH")
-          RELEASE_NOTES=$(jq -r '.release.body' "$GITHUB_EVENT_PATH")
-          
-          # create new GIT branch
-          git checkout -b "automated/update-changelog-${TAG}"
-
-          # Prepend new release info to the existing CHANGELOG.md
-          { echo -e "# Release ${TAG}\n\n${RELEASE_NOTES}\n\n"; cat CHANGELOG.md; } > CHANGELOG.tmp
-          mv CHANGELOG.tmp CHANGELOG.md
-
-          # put new version into config.json
-          jq --arg tag "$TAG" '.version = $tag' config.json > config.tmp
-          mv config.tmp config.json
-
-          # re-read the tag in this step
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add CHANGELOG.md
-          git add config.json
-          git commit -m "chore: update changelog for release ${TAG}"
-          git push --set-upstream origin "automated/update-changelog-${TAG}"
-
-          # create PR
-          gh pr create \
-            --title "chore: update changelog for release ${TAG}" \
-            --body "This PR updates the changelog."
-
-          # merge PR
-          gh pr merge "automated/update-changelog-${TAG}" --merge
-  
   publish_release:
     runs-on: ubuntu-latest
     env:
@@ -69,7 +26,7 @@ jobs:
             {
               docker_name: amd64,
               hass_name: amd64
-            }, 
+            },
             {
               docker_name: arm64,
               hass_name: aarch64
@@ -84,13 +41,13 @@ jobs:
         ref: ${{ env.TAG }}
 
     # QEMU lets amd64 runners cross-build arm/arm64 layers
-    - uses: docker/setup-qemu-action@v3          
+    - uses: docker/setup-qemu-action@v3
 
     # Buildx = Docker’s multi-arch builder front-end
-    - uses: docker/setup-buildx-action@v3        
+    - uses: docker/setup-buildx-action@v3
 
     # Log in to GitHub Container Registry
-    - uses: docker/login-action@v3               
+    - uses: docker/login-action@v3
       with:
         registry: ghcr.io
         username: Rbillon59
