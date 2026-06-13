@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.3.1](https://github.com/Rbillon59/hass-n8n/compare/4.3.0...4.3.1) (2026-06-13)
+
+
+### Bug Fixes
+
+* only export N8N_SSL_CERT/KEY when certfile and keyfile are set ([#534](https://github.com/Rbillon59/hass-n8n/issues/534)) ([ad8b273](https://github.com/Rbillon59/hass-n8n/commit/ad8b273a6fae77160d65f2269693937a29f51c35)), closes [#445](https://github.com/Rbillon59/hass-n8n/issues/445)
+
 ## [4.3.0](https://github.com/Rbillon59/hass-n8n/compare/4.2.30...4.3.0) (2026-06-13)
 
 
