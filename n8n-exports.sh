@@ -8,8 +8,18 @@ export N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 CONFIG_PATH="/data/options.json"
 export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
 export N8N_PROTOCOL="$(jq --raw-output '.protocol // empty' $CONFIG_PATH)"
-export N8N_SSL_CERT="/ssl/$(jq --raw-output '.certfile // empty' $CONFIG_PATH)"
-export N8N_SSL_KEY="/ssl/$(jq --raw-output '.keyfile // empty' $CONFIG_PATH)"
+
+# Only export the SSL paths when both a certfile and a keyfile are actually
+# configured. Otherwise jq returns empty and the paths collapse to "/ssl/"
+# (the ssl:ro mount directory). When N8N_PROTOCOL=https is also set, n8n then
+# runs readFile() on that directory and crashes with EISDIR. Leaving the vars
+# unset keeps n8n's own empty defaults, so the HTTPS branch is skipped safely.
+N8N_CERTFILE="$(jq --raw-output '.certfile // empty' $CONFIG_PATH)"
+N8N_KEYFILE="$(jq --raw-output '.keyfile // empty' $CONFIG_PATH)"
+if [ -n "$N8N_CERTFILE" ] && [ -n "$N8N_KEYFILE" ]; then
+    export N8N_SSL_CERT="/ssl/$N8N_CERTFILE"
+    export N8N_SSL_KEY="/ssl/$N8N_KEYFILE"
+fi
 export N8N_CMD_LINE="$(jq --raw-output '.cmd_line_args // empty' $CONFIG_PATH)"
 export UNRESTRICT_FILE_WRITES="$(jq --raw-output '.unrestrict_file_writes // false' $CONFIG_PATH)"
 
