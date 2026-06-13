@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.3.2](https://github.com/Rbillon59/hass-n8n/compare/4.3.1...4.3.2) (2026-06-13)
+
+
+### Bug Fixes
+
+* keep leading slash in N8N_ENDPOINT_HEALTH so editor stays online ([#535](https://github.com/Rbillon59/hass-n8n/issues/535)) ([de90b7b](https://github.com/Rbillon59/hass-n8n/commit/de90b7bdd8faf7e12f53c0413d3b96fdd0b5a911)), closes [#530](https://github.com/Rbillon59/hass-n8n/issues/530)
+
 ## [4.3.1](https://github.com/Rbillon59/hass-n8n/compare/4.3.0...4.3.1) (2026-06-13)
 
 
