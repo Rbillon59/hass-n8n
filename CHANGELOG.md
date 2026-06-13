@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.3.0](https://github.com/Rbillon59/hass-n8n/compare/4.2.30...4.3.0) (2026-06-13)
+
+
+### Features
+
+* add opt-in unrestrict_file_writes for HA-mapped path writes ([#518](https://github.com/Rbillon59/hass-n8n/issues/518)) ([f8c9c7d](https://github.com/Rbillon59/hass-n8n/commit/f8c9c7d2020caec05760e66ee87a58d426e98d4b))
+
 ## [4.2.30](https://github.com/Rbillon59/hass-n8n/compare/4.2.29...4.2.30) (2026-06-13)
 
 
