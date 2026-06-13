@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.2.30](https://github.com/Rbillon59/hass-n8n/compare/4.2.29...4.2.30) (2026-06-13)
+
+
+### Bug Fixes
+
+* avoid fromJSON crash when release-please has no PR to create ([e6e4d5d](https://github.com/Rbillon59/hass-n8n/commit/e6e4d5dd07926b9ee55a97f49fafc7653c0b9425))
+* avoid fromJSON crash when release-please has no PR to create ([e906204](https://github.com/Rbillon59/hass-n8n/commit/e906204076d1de9a6a8996d5c4951a7ea4350adf))
+
 ## [4.2.29](https://github.com/Rbillon59/hass-n8n/compare/4.2.28...4.2.29) (2026-06-10)
 
 
