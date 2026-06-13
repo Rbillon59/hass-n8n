@@ -46,13 +46,15 @@
   "options": {
     "timezone": "Europe/Berlin",
     "env_vars_list": [],
-    "cmd_line_args": ""
+    "cmd_line_args": "",
+    "unrestrict_file_writes": false
   },
   "schema": {
     "timezone": "str",
     "env_vars_list": [
       "match(^[A-Z_0-9]+: .*$)"
     ],
-    "cmd_line_args": "str?"
+    "cmd_line_args": "str?",
+    "unrestrict_file_writes": "bool?"
   }
 }

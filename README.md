@@ -25,6 +25,7 @@ env_vars_list:
   - "EXTERNAL_URL: <value here>"
   - "OTHER_ENVIRONMENT_VARIABLE_OF_YOUR_CHOICE: <value here>"
 cmd_line_args: ""
+unrestrict_file_writes: false
 ```
 
 ## Option: `env_vars_list` (required)
@@ -38,6 +39,16 @@ All the available environment variables are available here : <https://docs.n8n.i
 ## Option: `cmd_line_args` (optional)
 
 The command line to start n8n. If you want to use a custom command line, you can use this variable.
+
+## Option: `unrestrict_file_writes` (optional)
+
+Allows n8n workflows to write files to the Home Assistant mapped directories `/share` and `/media`. Defaults to `false`.
+
+n8n 1.x blocks file writes outside its allowed paths (for example with the Read/Write Files node), even when the OS permissions allow it. The documented workaround, setting the `N8N_BLOCK_FILE_ACCESS_TO_N8N_FILES: "false"` environment variable, does not work in this addon because n8n executes nodes in a task-runner subprocess that receives a stripped environment, so the override never reaches it.
+
+When set to `true`, the addon patches n8n's internal file-system helper (`isFilePathBlocked`) at startup (idempotently) so that file writes are no longer blocked.
+
+**Note:** enabling this removes one of n8n's file-access safety guards, so only enable it if you trust the workflows running in your n8n instance.
 
 ## Installing external packages
 

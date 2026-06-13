@@ -11,6 +11,7 @@ export N8N_PROTOCOL="$(jq --raw-output '.protocol // empty' $CONFIG_PATH)"
 export N8N_SSL_CERT="/ssl/$(jq --raw-output '.certfile // empty' $CONFIG_PATH)"
 export N8N_SSL_KEY="/ssl/$(jq --raw-output '.keyfile // empty' $CONFIG_PATH)"
 export N8N_CMD_LINE="$(jq --raw-output '.cmd_line_args // empty' $CONFIG_PATH)"
+export UNRESTRICT_FILE_WRITES="$(jq --raw-output '.unrestrict_file_writes // false' $CONFIG_PATH)"
 
 #####################
 ## USER PARAMETERS ##
