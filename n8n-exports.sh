@@ -92,12 +92,3 @@ echo "External Home Assistant n8n URL: ${EXTERNAL_N8N_URL}"
 export N8N_PATH=${N8N_PATH:-"${INGRESS_PATH}"}
 export N8N_EDITOR_BASE_URL=${N8N_EDITOR_BASE_URL:-"${EXTERNAL_N8N_URL}${N8N_PATH}"}
 export WEBHOOK_URL=${WEBHOOK_URL:-"http://${LOCAL_HA_HOSTNAME}:8081"}
-# Keep the leading slash so the path is absolute. Behind the HA ingress, n8n is
-# served under INGRESS_PATH and the ingress does NOT strip that prefix, so the
-# backend must mount the healthz route at "<ingress>/healthz" and the editor must
-# fetch it as an absolute URL. Using "${INGRESS_PATH#/}healthz" dropped the leading
-# slash, which (a) mounts the backend route on a bogus relative path and (b) makes
-# the frontend health check resolve relative to the current page, so it never gets
-# {"status":"ok"} and the editor flips to the "Offline" badge a few seconds after
-# load. "${INGRESS_PATH%/}/healthz" trims a trailing slash then re-adds exactly one.
-export N8N_ENDPOINT_HEALTH=${N8N_ENDPOINT_HEALTH:-"${INGRESS_PATH%/}/healthz"}
