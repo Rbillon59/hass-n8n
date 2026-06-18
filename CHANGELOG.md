@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.3.5](https://github.com/Rbillon59/hass-n8n/compare/4.3.4...4.3.5) (2026-06-18)
+
+
+### Bug Fixes
+
+* remove N8N_ENDPOINT_HEALTH override, let n8n 2.x derive it from N8N_PATH ([#544](https://github.com/Rbillon59/hass-n8n/issues/544)) ([54056d1](https://github.com/Rbillon59/hass-n8n/commit/54056d1531f730b1853654bb2077749c4ad0638a))
+
 ## [4.3.4](https://github.com/Rbillon59/hass-n8n/compare/4.3.3...4.3.4) (2026-06-18)
 
 
