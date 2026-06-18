@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.3.4](https://github.com/Rbillon59/hass-n8n/compare/4.3.3...4.3.4) (2026-06-18)
+
+
+### Bug Fixes
+
+* **deps:** bump n8nio/n8n from 2.26.4 to 2.26.6 ([#542](https://github.com/Rbillon59/hass-n8n/issues/542)) ([a7c0042](https://github.com/Rbillon59/hass-n8n/commit/a7c00428cffc3dc61927810ed3658a667be0f2f4))
+
 ## [4.3.3](https://github.com/Rbillon59/hass-n8n/compare/4.3.2...4.3.3) (2026-06-17)
 
 
