@@ -84,12 +84,12 @@ test.describe('Docker Container Integration Tests', () => {
   });
 
   test('should return 200 on health endpoint via ingress path', async ({ request }) => {
-    const response = await request.get('http://localhost:5000/api/hassio_ingress/redacted/healthz');
+    const response = await request.get('http://localhost:5000/healthz');
     expect(response.status()).toBe(200);
   });
 
   test('should return valid JSON body from healthz endpoint', async ({ request }) => {
-    const response = await request.get('http://localhost:5000/api/hassio_ingress/redacted/healthz');
+    const response = await request.get('http://localhost:5000/healthz');
     expect(response.status()).toBe(200);
     const contentType = response.headers()['content-type'];
     expect(contentType).toContain('application/json');
@@ -99,14 +99,14 @@ test.describe('Docker Container Integration Tests', () => {
   });
 
   test('should respond to HEAD requests on healthz endpoint', async ({ request }) => {
-    const response = await request.head('http://localhost:5000/api/hassio_ingress/redacted/healthz');
+    const response = await request.head('http://localhost:5000/healthz');
     expect(response.status()).toBe(200);
   });
 
   test('should respond consistently to repeated healthz requests without failures', async ({ request }) => {
     const numRequests = 5;
     for (let i = 0; i < numRequests; i++) {
-      const response = await request.get('http://localhost:5000/api/hassio_ingress/redacted/healthz');
+      const response = await request.get('http://localhost:5000/healthz');
       expect(response.status()).toBe(200);
     }
   });
@@ -117,7 +117,7 @@ test.describe('Docker Container Integration Tests', () => {
 
     // Poll the health endpoint a few times, the same way n8n does internally
     for (let i = 0; i < 3; i++) {
-      const res = await page.request.get('http://localhost:5000/api/hassio_ingress/redacted/healthz');
+      const res = await page.request.get('http://localhost:5000/healthz');
       expect(res.status()).toBe(200);
       await page.waitForTimeout(2000);
     }
