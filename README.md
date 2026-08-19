@@ -99,6 +99,10 @@ Just start the addon and head to the addon's web UI.
 <https://docs.n8n.io>
 <https://docs.n8n.io/getting-started/tutorials.html>
 
+### n8n changelog
+
+This addon's [CHANGELOG.md](CHANGELOG.md) tracks each bump of the underlying `n8nio/n8n` image. For what actually changed in n8n itself (breaking changes on major bumps in particular), check the upstream release notes: <https://docs.n8n.io/release-notes/>
+
 ### Community public workflows
 
 <https://n8n.io/workflows>
