@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.4.1](https://github.com/Rbillon59/hass-n8n/compare/4.4.0...4.4.1) (2026-08-23)
+
+
+### Bug Fixes
+
+* grant workflows permission for auto-merge on workflow file changes ([#619](https://github.com/Rbillon59/hass-n8n/issues/619)) ([6b2dd3e](https://github.com/Rbillon59/hass-n8n/commit/6b2dd3eb463b4e70bb7e86c521879d6e9f499c12))
+
 ## [4.4.0](https://github.com/Rbillon59/hass-n8n/compare/4.3.33...4.4.0) (2026-08-23)
 
 
