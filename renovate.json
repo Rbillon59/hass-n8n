@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "semanticCommits": "enabled",
+  "semanticCommitType": "fix",
+  "semanticCommitScope": "deps",
+  "packageRules": [
+    {
+      "matchPackageNames": ["n8nio/n8n"],
+      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}{{#if hasReleaseNotes}} ([changelog]({{changelogUrl}})){{/if}}"
+    }
+  ]
+}
