@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.4.0](https://github.com/Rbillon59/hass-n8n/compare/4.3.33...4.4.0) (2026-08-23)
+
+
+### Features
+
+* switch n8n dependency updates from Dependabot to Renovate ([#610](https://github.com/Rbillon59/hass-n8n/issues/610)) ([030679d](https://github.com/Rbillon59/hass-n8n/commit/030679d61f4635867ffb344edec73983da51a4ab)), closes [#580](https://github.com/Rbillon59/hass-n8n/issues/580)
+
 ## [4.3.33](https://github.com/Rbillon59/hass-n8n/compare/4.3.32...4.3.33) (2026-08-20)
 
 
