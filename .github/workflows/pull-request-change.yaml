@@ -3,6 +3,7 @@ name: Build pull request
 permissions:
   contents: write
   pull-requests: write
+  workflows: write
 
 on:
   pull_request:

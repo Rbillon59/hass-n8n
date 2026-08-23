@@ -41,7 +41,7 @@ jobs:
         ref: ${{ env.TAG }}
 
     # QEMU lets amd64 runners cross-build arm/arm64 layers
-    - uses: docker/setup-qemu-action@v3
+    - uses: docker/setup-qemu-action@v4
 
     # Buildx = Docker’s multi-arch builder front-end
     - uses: docker/setup-buildx-action@v4
