@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.4.2](https://github.com/Rbillon59/hass-n8n/compare/4.4.1...4.4.2) (2026-08-23)
+
+
+### Bug Fixes
+
+* revert invalid workflows permission key, use CR_PAT for auto-merge ([#621](https://github.com/Rbillon59/hass-n8n/issues/621)) ([3bba599](https://github.com/Rbillon59/hass-n8n/commit/3bba599cb64bf087591af551f6d443e6fcbc1ae6))
+
 ## [4.4.1](https://github.com/Rbillon59/hass-n8n/compare/4.4.0...4.4.1) (2026-08-23)
 
 
