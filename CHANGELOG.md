@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.4.3](https://github.com/Rbillon59/hass-n8n/compare/4.4.2...4.4.3) (2026-08-25)
+
+
+### Bug Fixes
+
+* emit n8n bumps as fix so release-please cuts a release ([#624](https://github.com/Rbillon59/hass-n8n/issues/624)) ([4de337c](https://github.com/Rbillon59/hass-n8n/commit/4de337c4b20acba2698c1659aa3099eba6f81fb6))
+
 ## [4.4.2](https://github.com/Rbillon59/hass-n8n/compare/4.4.1...4.4.2) (2026-08-23)
 
 
