@@ -7,6 +7,7 @@
   "packageRules": [
     {
       "matchPackageNames": ["n8nio/n8n"],
+      "semanticCommitType": "fix",
       "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}{{#if hasReleaseNotes}} ([changelog]({{changelogUrl}})){{/if}}"
     }
   ]
