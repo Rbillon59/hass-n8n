@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.4.12](https://github.com/Rbillon59/hass-n8n/compare/4.4.11...4.4.12) (2026-09-03)
+
+
+### Bug Fixes
+
+* preserve the browser Origin on the webhook port ([#642](https://github.com/Rbillon59/hass-n8n/issues/642)) ([9f3f40a](https://github.com/Rbillon59/hass-n8n/commit/9f3f40a58a590d3603bbdc30b9057b483015ecfe))
+
 ## [4.4.11](https://github.com/Rbillon59/hass-n8n/compare/4.4.10...4.4.11) (2026-09-03)
 
 
