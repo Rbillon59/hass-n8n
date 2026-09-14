@@ -107,6 +107,10 @@ Just start the addon and head to the addon's web UI.
 
 <https://n8n.io/integrations>
 
+### Video tutorials
+
+- Spanish: [Instalación de N8N en Home Assistant](https://www.youtube.com/watch?v=pKIhm9foWM0) by Juan Antonio Carrillo Navarro
+
 ## License
 
 This addon is published under the Apache 2 license. Original author of the addon's bundled software is n8n.
