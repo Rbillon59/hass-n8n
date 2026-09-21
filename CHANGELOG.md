@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.4.24](https://github.com/Rbillon59/hass-n8n/compare/4.4.23...4.4.24) (2026-09-21)
+
+
+### Bug Fixes
+
+* **deps:** update n8nio/n8n docker tag from 2.40.4 to 2.40.5 ([#666](https://github.com/Rbillon59/hass-n8n/issues/666)) ([7b4d82b](https://github.com/Rbillon59/hass-n8n/commit/7b4d82b4b56fdf5ce811066054a1a52b26f37351))
+
 ## [4.4.23](https://github.com/Rbillon59/hass-n8n/compare/4.4.22...4.4.23) (2026-09-21)
 
 
