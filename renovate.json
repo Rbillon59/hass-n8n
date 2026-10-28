@@ -8,7 +8,17 @@
     {
       "matchPackageNames": ["n8nio/n8n"],
       "semanticCommitType": "fix",
-      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}{{#if hasReleaseNotes}} ([changelog]({{changelogUrl}})){{/if}}"
+      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}} ([release notes](https://github.com/n8n-io/n8n/releases/tag/n8n%40{{newVersion}}))"
+    },
+    {
+      "matchPackageNames": ["n8nio/n8n"],
+      "matchUpdateTypes": ["minor"],
+      "semanticCommitType": "feat"
+    },
+    {
+      "matchPackageNames": ["n8nio/n8n"],
+      "matchUpdateTypes": ["major"],
+      "commitMessagePrefix": "fix(deps)!:"
     }
   ]
 }
