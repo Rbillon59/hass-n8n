@@ -33,6 +33,33 @@ jobs:
           # - the published release triggers publish-release.yml
           token: ${{ secrets.CR_PAT }}
 
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        if: ${{ steps.release.outputs.prs_created == 'true' }}
+        with:
+          ref: ${{ fromJSON(steps.release.outputs.pr).headBranchName }}
+          token: ${{ secrets.CR_PAT }}
+          fetch-depth: 0
+
+      # release-please force-pushes the release branch on every update, so the
+      # upstream notes are re-added each time it rewrites CHANGELOG.md.
+      - name: Add upstream n8n release notes to the release PR
+        if: ${{ steps.release.outputs.prs_created == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.CR_PAT }}
+        run: |
+          last_tag=$(git show origin/master:.release-please-manifest.json | jq -r '."."')
+          n8n_version() { sed -n -E 's|^FROM n8nio/n8n:([^ ]+).*|\1|p'; }
+          prev=$(git show "$last_tag:Dockerfile" | n8n_version)
+          new=$(n8n_version < Dockerfile)
+          .github/scripts/n8n-release-notes.sh "$prev" "$new" CHANGELOG.md
+          if git diff --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore: add upstream n8n release notes"
+          git push
+
       # Zero-touch releases: enable auto-merge on the release PR so it merges
       # on its own once the e2e checks pass. Merging cuts the tag and publishes
       # the release, which triggers publish-release.yml.
