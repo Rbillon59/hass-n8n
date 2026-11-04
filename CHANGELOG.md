@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.5.0](https://github.com/Rbillon59/hass-n8n/compare/4.4.50...4.5.0) (2026-11-04)
+
+
+### Features
+
+* **deps:** update n8nio/n8n docker tag from 3.0.1 to 3.1.0 ([release notes](https://github.com/n8n-io/n8n/releases/tag/n8n%403.1.0)) ([#721](https://github.com/Rbillon59/hass-n8n/issues/721)) ([8e3df25](https://github.com/Rbillon59/hass-n8n/commit/8e3df25a49ef8341dabe7ddc83ba548cf1cdf336))
+
 ## [4.4.50](https://github.com/Rbillon59/hass-n8n/compare/4.4.49...4.4.50) (2026-10-28)
 
 
